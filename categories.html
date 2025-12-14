@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="assets/CSS/categories.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+</head>
+<body>
+    <div class="Container">
+       <div class="mainSection">
+            <div class="navbar">
+                <div class="NavElements">
+                    <a id="Logo" href="#"><img src="assets/IMG/Logo.png"></a>
+                    <section class="NavPages">
+                        <a id="NavLink1" href="homePage.html">Home</a>
+                        <a id="NavLink2" href="#">Categories</a>
+                        <a id="NavLink3" href="Favorite.html">Favourite</a>
+                        <a id="NavLink4" href="#">About Us</a>
+                    </section>
+                    <section class="Register">
+                        <a href="#" id="Login">Log in</a>
+                        <a href="#" id="Signup">Signup</a>
+                    </section>
+                    <p id="DropButton"><span class="material-symbols-outlined">menu</span></p>
+                    <section class="DropList">
+                        <img src="assets/IMG/Logo.png">
+                        <ul id="List">
+                            <li class="options"><span class="material-symbols-outlined">home</span><a href="homePage.html">Home</a></li>
+                            <li class="options"><span class="material-symbols-outlined">category</span>Categories</li>
+                            <li class="options"><span class="material-symbols-outlined">favorite</span>Favorite</li>
+                            <li class="options" id="about"><span class="material-symbols-outlined">info</span>About Us</li>
+                            <li class="options"><span class="material-symbols-outlined">login</span>Login</li>
+                            <li class="options"><span class="material-symbols-outlined">add</span>Signup</li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="CategoriesContainer">
+                <!-- Book Categories -->
+                <div class="CategoriesSection">
+                    <h3>Books</h3>
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
+                        <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
+                        <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
+                        <a href="categories.html" data-category="Children" data-type="Books">Children</a>
+                        <a href="categories.html" data-category="History" data-type="Books">History</a>
+                    </div>
+                </div>
+
+                <!-- Research Categories -->
+                <div class="CategoriesSection">
+                    <h3>Researches</h3>
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
+                        <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
+                        <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
+                        <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
+                        <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                    </div>
+                </div>
+
+                <!-- Article Categories -->
+                <div class="CategoriesSection">
+                    <h3>Articles</h3>
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
+                        <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
+                        <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
+                        <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
+                        <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="ImageText">
+                <div id="Logo-Text">
+                    <img src="assets/IMG/Logo.png">
+                    <p >More Than Books, It's a Journey</p>
+                </div>
+            <div class="scroll-down">
+                <i class="arrow"></i>
+            </div>
+            </div>
+        </div>
+
+        <div class="contentContainer">
+            
+                <!-- Display Selected Category -->
+            <div class="CategoryDetails">
+                <h2 id="category-title"></h2>
+                <p id="category-content"></p>
+            </div>
+
+            <div class="SearchContainer">
+                <input type="search" placeholder="Search" id="searchbar">
+                <button type="submit" ><span class="material-symbols-outlined">Search</span></button>
+            </div>
+
+        <div class="BooksContainer">
+            <div class="book-collections">
+                
+                <div class="book-card">
+                    <img src="assets/IMG/61hYNEQezgL.jpg" alt="The Uses of Libraries Book Cover">
+                        <p>The uses of Libraries. Please read me</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
+                        <p class="price">519.00 EGP</p>
+                        <div>
+                            <span class="material-symbols-outlined">Favorite</span>
+                            <span class="material-symbols-outlined">Search</span>
+                        </div>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="assets/IMG/61b7ow1ApXL.jpg" alt="Library Book Cover">
+                        <p>The uses of Libraries. Please read me</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="assets/IMG/images.jpeg" alt="Books Stack Cover">
+                        <p>The uses of Libraries. Please read me</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+
+                    <div class="book-card">
+                        <img src="assets/IMG/the-library-book-9781476740195_hr.jpg" alt="The Library Book Cover">
+                        <p>The uses of Libraries. Please read me</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="assets/IMG/the-library-book-9781476740195_hr.jpg" alt="Book Cover">
+                        <p>Book Title</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+
+                    <div class="book-card">
+                        <img src="assets/IMG/31+pWw6K3zL._AC_SY200_QL15_.jpg" alt="Novel Book Cover">
+                        <p>Book Title</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+
+                    <div class="book-card">
+                        <img src="assets/IMG/61b7ow1ApXL.jpg" alt="Book Cover">
+                        <p>Book Title</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+
+                    <div class="book-card">
+                        <img src="assets/IMG/61hYNEQezgL.jpg" alt="Book Cover">
+                        <p>Book Title</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="assets/IMG/61hYNEQezgL.jpg" alt="Book Cover">
+                        <p>Book Title</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+
+                    <div class="book-card">
+                        <img src="assets/IMG/31+pWw6K3zL._AC_SY200_QL15_.jpg" alt="Book Cover">
+                        <p>Book Title</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="assets/IMG/61b7ow1ApXL.jpg" alt="Book Cover">
+                        <p>Book Title</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+                    
+                    <div class="book-card">
+                        <img src="assets/IMG/the-library-book-9781476740195_hr.jpg" alt="Book Cover">
+                        <p>Book Title</p>
+                        <p class="tags">Genre, Bestseller</p>
+                        <p class="author">Author Name</p>
+                        <p class="price">519.00 EGP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="Footer">
+            <img src="assets/IMG/Black_logo.png" alt="logo">
+            <div class='Links'>
+                <ul id="Categories">
+                    <h2>Categories</h2>
+                    <li>Books</li>
+                    <li>Articles</li>
+                    <li>Research</li>
+                </ul>
+                <ul id="ٌRegisterN">
+                    <h2>Register</h2>
+                    <li>New registration</li>
+                    <li>Have an account?</li>   
+                </ul>
+                <ul id="Help">
+                    <h2>For Help</h2>
+                    <li>inquiry</li>
+                    <li>complaint</li>
+                    <li>Communication channels</li>
+                </ul>
+                <ul id="Contact Us">
+                    <h2>Contact Us</h2>
+                    <li>119203</li>
+                    <li>info123@gmail.com</li>
+                    <li>12471</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/JAVASCRIPT/homePage.js"></script> 
+    <script src="./assets/JAVASCRIPT/categories.js"></script>
+</body>
+</html>
