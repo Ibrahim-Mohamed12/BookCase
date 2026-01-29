@@ -6,34 +6,42 @@
     <title>Categories</title>
     <link rel="stylesheet" href="assets/CSS/categories.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-
 </head>
 <body>
+    <!-- Add success message notification -->
+    <div id="successMessage" class="success-message">Login successfully!</div>
+    
     <div class="Container">
        <div class="mainSection">
             <div class="navbar">
                 <div class="NavElements">
-                    <a id="Logo" href="#"><img src="assets/IMG/Logo.png"></a>
+                    <a id="Logo" href="homePage.html"><img src="assets/IMG/Logo.png"></a>
                     <section class="NavPages">
                         <a id="NavLink1" href="homePage.html">Home</a>
-                        <a id="NavLink2" href="#">Categories</a>
-                        <a id="NavLink3" href="Favorite.html">Favourite</a>
-                        <a id="NavLink4" href="#">About Us</a>
+                        <a id="NavLink2" href="categories.html">Categories</a>
+                        <a id="NavLink3" href="favourite.html">Favourite</a>
+                        <a id="NavLink4" href="about.html">About Us</a>
                     </section>
                     <section class="Register">
-                        <a href="#" id="Login">Log in</a>
-                        <a href="#" id="Signup">Signup</a>
+                        <a href="login.html" id="Login">Log in</a>
+                        <a href="signup.html" id="Signup">Signup</a>
+                    </section>
+                    <!-- Add user profile section when logged in -->
+                    <section class="UserProfile" style="display: none;">
+                        <span class="material-symbols-outlined" id="userIcon">account_circle</span>
+                        <span id="username"></span>
+                        <button id="logoutBtn">Logout</button>
                     </section>
                     <p id="DropButton"><span class="material-symbols-outlined">menu</span></p>
                     <section class="DropList">
                         <img src="assets/IMG/Logo.png">
                         <ul id="List">
                             <li class="options"><span class="material-symbols-outlined">home</span><a href="homePage.html">Home</a></li>
-                            <li class="options"><span class="material-symbols-outlined">category</span>Categories</li>
-                            <li class="options"><span class="material-symbols-outlined">favorite</span>Favorite</li>
-                            <li class="options" id="about"><span class="material-symbols-outlined">info</span>About Us</li>
-                            <li class="options"><span class="material-symbols-outlined">login</span>Login</li>
-                            <li class="options"><span class="material-symbols-outlined">add</span>Signup</li>
+                            <li class="options"><span class="material-symbols-outlined">category</span><a href="categories.html">Categories</a></li>
+                            <li class="options"><span class="material-symbols-outlined">favorite</span><a href="favourite.html">Favorite</a></li>
+                            <li class="options"><span class="material-symbols-outlined">info</span><a href="about.html">About Us</a></li>
+                            <li class="options"><span class="material-symbols-outlined">login</span><a href="login.html">Login</a></li>
+                            <li class="options"><span class="material-symbols-outlined">add</span><a href="signup.html">Signup</a></li>
                         </ul>
                     </section>
                 </div>
@@ -106,138 +114,182 @@
             <div class="book-collections">
                 
                 <div class="book-card">
-                    <img src="assets/IMG/61hYNEQezgL.jpg" alt="The Uses of Libraries Book Cover">
+                    <!-- Add preview and favorite icons overlay -->
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="1">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="1">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Miniature Book Cover Template.jpg" alt="The Uses of Libraries Book Cover">
                         <p>The uses of Libraries. Please read me</p>
-                        <p class="tags">Genre, Bestseller</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
                         <p class="author">Ahmed Mohamed</p>
-                        <p class="price">519.00 EGP</p>
-                        <div>
-                            <span class="material-symbols-outlined">Favorite</span>
-                            <span class="material-symbols-outlined">Search</span>
+                    </div>
+                    
+                    <div class="book-card">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="2">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="2">favorite_border</span>
                         </div>
-                    </div>
-                    
-                    <div class="book-card">
-                        <img src="assets/IMG/61b7ow1ApXL.jpg" alt="Library Book Cover">
+                        <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Library Book Cover">
                         <p>The uses of Libraries. Please read me</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
                     
                     <div class="book-card">
-                        <img src="assets/IMG/images.jpeg" alt="Books Stack Cover">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="3">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="3">favorite_border</span>
+                        </div>
+                        <img src="assets/IMG/Thriller Novel Kindle Book Cover Template.jpg" alt="Books Stack Cover">
                         <p>The uses of Libraries. Please read me</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
 
                     <div class="book-card">
-                        <img src="assets/IMG/the-library-book-9781476740195_hr.jpg" alt="The Library Book Cover">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="4">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="4">favorite_border</span>
+                        </div>
+                        <img src="assets/IMG/Miniature Book Cover Template.jpg" alt="The Library Book Cover">
                         <p>The uses of Libraries. Please read me</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
                     
                     <div class="book-card">
-                        <img src="assets/IMG/the-library-book-9781476740195_hr.jpg" alt="Book Cover">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="5">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="5">favorite_border</span>
+                        </div>
+                        <img src="assets/IMG/Thriller Novel Kindle Book Cover Template.jpg" alt="Book Cover">
                         <p>Book Title</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
 
                     <div class="book-card">
-                        <img src="assets/IMG/31+pWw6K3zL._AC_SY200_QL15_.jpg" alt="Novel Book Cover">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="6">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="6">favorite_border</span>
+                        </div>
+                        <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Novel Book Cover">
                         <p>Book Title</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
 
                     <div class="book-card">
-                        <img src="assets/IMG/61b7ow1ApXL.jpg" alt="Book Cover">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="7">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="7">favorite_border</span>
+                        </div>
+                        <img src="assets/IMG/Miniature Book Cover Template.jpg" alt="Book Cover">
                         <p>Book Title</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
 
                     <div class="book-card">
-                        <img src="assets/IMG/61hYNEQezgL.jpg" alt="Book Cover">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="8">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="8">favorite_border</span>
+                        </div>
+                        <img src="assets/IMG/Novel Book Cover Template.jpg" alt="Book Cover">
                         <p>Book Title</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
                     
                     <div class="book-card">
-                        <img src="assets/IMG/61hYNEQezgL.jpg" alt="Book Cover">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="9">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="9">favorite_border</span>
+                        </div>
+                        <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Book Cover">
                         <p>Book Title</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
 
                     <div class="book-card">
-                        <img src="assets/IMG/31+pWw6K3zL._AC_SY200_QL15_.jpg" alt="Book Cover">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="10">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="10">favorite_border</span>
+                        </div>
+                        <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Book Cover">
                         <p>Book Title</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
                     
                     <div class="book-card">
-                        <img src="assets/IMG/61b7ow1ApXL.jpg" alt="Book Cover">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="11">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="11">favorite_border</span>
+                        </div>
+                        <img src="assets/IMG/Children_27s Book Cover Template.jpg" alt="Book Cover">
                         <p>Book Title</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
                     
                     <div class="book-card">
-                        <img src="assets/IMG/the-library-book-9781476740195_hr.jpg" alt="Book Cover">
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon" data-book-id="12">visibility</span>
+                            <span class="material-symbols-outlined favorite-icon" data-book-id="12">favorite_border</span>
+                        </div>
+                        <img src="assets/IMG/Thriller Novel Kindle Book Cover Template.jpg" alt="Book Cover">
                         <p>Book Title</p>
-                        <p class="tags">Genre, Bestseller</p>
-                        <p class="author">Author Name</p>
-                        <p class="price">519.00 EGP</p>
+                        <p class="tags" id="Tags">Genre, Bestseller</p>
+                        <p class="author">Ahmed Mohamed</p>
                     </div>
                 </div>
             </div>
         </div>
-    <div class="Footer">
-            <img src="assets/IMG/Black_logo.png" alt="logo">
-            <div class='Links'>
-                <ul id="Categories">
-                    <h2>Categories</h2>
-                    <li>Books</li>
-                    <li>Articles</li>
-                    <li>Research</li>
-                </ul>
-                <ul id="ٌRegisterN">
-                    <h2>Register</h2>
-                    <li>New registration</li>
-                    <li>Have an account?</li>   
-                </ul>
-                <ul id="Help">
-                    <h2>For Help</h2>
-                    <li>inquiry</li>
-                    <li>complaint</li>
-                    <li>Communication channels</li>
-                </ul>
-                <ul id="Contact Us">
-                    <h2>Contact Us</h2>
-                    <li>119203</li>
-                    <li>info123@gmail.com</li>
-                    <li>12471</li>
-                </ul>
+        
+    <!-- Add preview popup modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <img id="modalBookImage" src="/placeholder.svg" alt="Book Cover">
+                <div class="modal-details">
+                    <h2 id="modalBookTitle"></h2>
+                    <p class="modal-author" id="modalBookAuthor"></p>
+                    <p class="modal-tags" id="modalBookTags"></p>
+                    <p class="modal-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="modal-buttons">
+                        <button class="btn-display">Display</button>
+                        <button class="btn-download">Download</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    
+    <div class="Footer">
+        <img src="assets/IMG/Logo.png" alt="logo">
+        <div class='Links'>
+            <ul id="Categories">
+                <h2>Categories</h2>
+                <li>Books</li>
+                <li>Articles</li>
+                <li>Research</li>
+            </ul>
+            <ul id="ٌRegister">
+                <h2>Register</h2>
+                <li><a href=""></a>New registration</li>
+                <li>Have an account?</li>   
+            </ul>
+        </div>
+    </div>
+</div>
 
     <script src="./assets/JAVASCRIPT/homePage.js"></script> 
+    <script src="./assets/JAVASCRIPT/book-features.js"></script>
     <script src="./assets/JAVASCRIPT/categories.js"></script>
+    <script src="./assets/JAVASCRIPT/auth-check.js"></script>
 </body>
 </html>

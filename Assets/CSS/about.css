@@ -1,0 +1,700 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #0c0c0c;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 10, "opsz" 30;
+}
+
+.Container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainSection {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../IMG/book-5472X3648-wallpaper-4ibfq0znewa7wgxb.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.NavElements {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+#Logo img {
+  width: 190px;
+  height: 30px;
+}
+
+.NavPages {
+  display: flex;
+  width: 500px;
+  font-size: 18px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+.NavPages a {
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+
+.NavPages a.active {
+  font-weight: 700;
+}
+
+.NavPages a:hover {
+  animation: navAnimation 1.3s infinite linear;
+}
+
+@keyframes navAnimation {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.Register {
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 4px;
+  gap: 12px;
+}
+
+.Register #Signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 100px;
+  color: #ffffff;
+  border-radius: 4px;
+  border: 1px white solid;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+
+.Register #Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 100px;
+  border-radius: 4px;
+  border: 1px solid rgb(244, 174, 174);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  background-color: rgb(244, 174, 174);
+  color: #000000;
+}
+
+#DropButton {
+  display: none;
+}
+
+#DropButton span {
+  box-sizing: border-box;
+  padding-top: 2px;
+  font-size: 40px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.DropList {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0px;
+  right: 0;
+  background-color: #0c0c0ce5;
+  color: #ffffff;
+  width: 400px;
+  height: 100vh;
+  box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.751);
+  max-height: 0;
+  overflow: hidden;
+  z-index: 1000;
+  transition: max-height 0.3s ease-out;
+}
+
+.DropList.open {
+  max-height: 100vh;
+}
+
+.DropList img {
+  margin: 40px 0 75px 0;
+  width: 200px;
+  height: auto;
+}
+
+.DropList #List {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.DropList #List li {
+  font-size: 25px;
+  padding: 10px;
+  padding-left: 19px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.DropList #List li a {
+  color: #ffffff;
+}
+
+.DropList #List li span {
+  font-size: 25px;
+  margin-right: 16px;
+  vertical-align: text-bottom;
+}
+
+.DropList #List li:hover {
+  background-color: #545454;
+  border-radius: 6px;
+}
+
+.CategoriesContainer {
+  position: absolute;
+  top: 105%;
+  width: 90%;
+  background-color: #0c0c0ce5;
+  box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.751);
+  display: none;
+  z-index: 100;
+  border-radius: 8px;
+}
+
+.CategoriesSection {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 32px;
+}
+
+.CategoriesSection p {
+  background-color: #ffffff;
+  width: 1px;
+  height: 85%;
+  border-radius: 10px;
+}
+
+.CategoriesSection .Types {
+  display: flex;
+  flex-direction: column;
+}
+
+.CategoriesSection a {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  padding: 5px;
+  margin: 0 10px;
+  color: #ffffff;
+}
+
+.CategoriesSection h3 {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.CategoriesSection a:hover {
+  animation: navAnimation 1.3s infinite linear;
+}
+
+#ImageText {
+  width: 100%;
+  height: fit-content;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  box-sizing: border-box;
+}
+
+#ImageText #Logo-Text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#ImageText div img {
+  width: 300px;
+  margin-bottom: 10px;
+  animation: logoFloat 2s infinite linear;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    position: relative;
+    top: 0;
+  }
+  50% {
+    position: relative;
+    top: -20px;
+  }
+}
+
+#ImageText #Logo-Text p {
+  color: rgb(246, 245, 245);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: -320px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-right: 3px solid white;
+  border-bottom: 3px solid rgb(244, 174, 174);
+  transform: rotate(45deg);
+  animation: arrowBounce 1.5s infinite;
+}
+
+@keyframes arrowBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(45deg);
+  }
+}
+
+/* Content Container */
+.contentContainer {
+  width: 100%;
+  background-color: #0c0c0c;
+  box-shadow: 0 -20px 20px 20px #0c0c0c;
+  padding: 50px 0 100px;
+}
+
+.aboutSection {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aboutSection h2 {
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.aboutSection .quote {
+  color: #999999;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 70px;
+  display: block;
+}
+
+.missionSection {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 80px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.missionSection .textContent {
+  flex: 1;
+}
+
+.missionSection h3 {
+  color: rgb(244, 174, 174);
+  font-family: "Quicksand", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.missionSection p {
+  color: #cccccc;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.missionSection .iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missionSection .iconBox .material-symbols-outlined {
+  font-size: 120px;
+  color: rgb(244, 174, 174);
+}
+
+.valuesSection {
+  margin-bottom: 80px;
+}
+
+.valuesSection h3 {
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.valueCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.valueCard {
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.valueCard:hover {
+  transform: translateY(-10px);
+  background-color: rgba(244, 174, 174, 0.1);
+}
+
+.valueCard .material-symbols-outlined {
+  font-size: 60px;
+  color: rgb(244, 174, 174);
+  margin-bottom: 20px;
+}
+
+.valueCard h4 {
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.valueCard p {
+  color: #999999;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.storySection {
+  margin-bottom: 80px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.storySection h3 {
+  color: rgb(244, 174, 174);
+  font-family: "Quicksand", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.storyContent p {
+  color: #cccccc;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.teamSection {
+  text-align: center;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, rgba(244, 174, 174, 0.1), rgba(12, 12, 12, 0.5));
+  border-radius: 12px;
+}
+
+.teamSection h3 {
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.teamSection p {
+  color: #cccccc;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.primaryButton{
+  display: inline-block;
+  padding: 15px 40px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.primaryButton {
+  background-color: rgb(244, 174, 174);
+  color: #000000;
+}
+
+.primaryButton:hover {
+  background-color: rgb(255, 190, 190);
+  transform: translateY(-2px);
+}
+
+/* Start of Footer*/
+.Footer {
+  background: linear-gradient(45deg, #121212, rgb(25 23 23));
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  box-shadow: 0px 0px 18px 2px #1313139c;
+  gap: 30px;
+  text-align: center;
+}
+
+.Footer img {
+  width: 180px;
+  padding: 0;
+}
+.Links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+.Links ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+.Links ul h2 {
+  margin-bottom: 7px;
+  font-size: 19px;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #fff;
+}
+
+.Links ul li {
+  padding: 8px;
+  font-size: 16px;
+  color: rgb(189, 189, 189);
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.Links ul li:active{
+  color: rgb(189, 189, 189);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .NavPages,
+  .Register {
+    display: none;
+  }
+  #DropButton {
+    display: block;
+  }
+  .missionSection {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutSection h2 {
+    font-size: 35px;
+  }
+  .missionSection h3,
+  .storySection h3 {
+    font-size: 26px;
+  }
+  .valuesSection h3,
+  .teamSection h3 {
+    font-size: 28px;
+  }
+  .missionSection,
+  .storySection {
+    padding: 25px;
+  }
+  .valueCards {
+    grid-template-columns: 1fr;
+  }
+  #ImageText #Logo-Text img {
+    width: 180px;
+  }
+  #ImageText #Logo-Text p {
+    font-size: 22px;
+  }
+  .DropList {
+    width: 300px;
+  }
+}
+
+/* Add user profile styles */
+.UserProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-family: "Quicksand", sans-serif;
+}
+
+#userIcon {
+  font-size: 32px;
+  color: rgb(244, 174, 174);
+}
+
+#username {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#logoutBtn {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+  transition: all 0.3s ease;
+}
+
+#logoutBtn:hover {
+  background-color: rgb(244, 174, 174);
+  color: black;
+  border-color: rgb(244, 174, 174);
+}
+
+/* Add success message styles */
+.success-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  display: none;
+  animation: slideInRight 0.5s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
