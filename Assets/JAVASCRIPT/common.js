@@ -123,6 +123,42 @@ document.querySelectorAll(".CategoriesContainer a").forEach((link) => {
   })
 })
 
+// Toggle DropCategoriesContainer dropdown
+const dropCatButton = document.getElementById("DropCatButton") // or whatever button toggles DropCategoriesContainer
+const dropCatContainer = document.querySelector(".DropCategoriesContainer")
+
+if (dropCatButton && dropCatContainer) {
+  dropCatButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    if (dropCatContainer.style.display === "flex") {
+      dropCatContainer.style.display = "none"
+    } else {
+      dropCatContainer.style.display = "flex"
+      dropCatContainer.style.justifyContent = "center"
+    }
+  })
+
+  // Hide the DropCategoriesContainer if clicking outside it or the button
+  document.addEventListener("click", (e) => {
+    if (!dropCatButton.contains(e.target) && !dropCatContainer.contains(e.target)) {
+      dropCatContainer.style.display = "none"
+    }
+  })
+}
+
+// Handle clicks on links inside DropCategoriesContainer
+document.querySelectorAll(".DropCategoriesContainer a").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault()
+    const category = this.dataset.category
+    const type = this.dataset.type
+    const url = `categories.html?type=${encodeURIComponent(type)}&category=${encodeURIComponent(category)}`
+    console.log("Navigating to:", url) // Debug log
+    window.location.href = url
+  })
+})
+
+
 // Favorites management
 const FavoritesManager = {
   getFavorites() {

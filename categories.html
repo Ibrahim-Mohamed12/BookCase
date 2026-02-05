@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories</title>
     <link rel="stylesheet" href="assets/CSS/categories.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
@@ -36,6 +37,11 @@
                     <section class="DropList">
                         <img src="assets/IMG/Logo.png">
                         <ul id="List">
+                            <li class="options UserProfileDrop" style="display: none; cursor: pointer;">
+                                <span class="material-symbols-outlined">account_circle</span>
+                                <span id="dropUsername" style="margin-right: auto; padding-left: 8px;"></span>
+                                <span class="material-symbols-outlined" id="dropLogoutIcon" style="margin-left: auto;">logout</span>
+                            </li>
                             <li class="options"><span class="material-symbols-outlined">home</span><a href="homePage.html">Home</a></li>
                             <li class="options"><span class="material-symbols-outlined">category</span><a href="categories.html">Categories</a></li>
                             <li class="options"><span class="material-symbols-outlined">favorite</span><a href="favourite.html">Favorite</a></li>
@@ -61,7 +67,6 @@
 
                 <!-- Research Categories -->
                 <div class="CategoriesSection">
-                    <h3>Researches</h3>
                     <p></p>
                     <div class="Types">
                         <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
@@ -74,7 +79,6 @@
 
                 <!-- Article Categories -->
                 <div class="CategoriesSection">
-                    <h3>Articles</h3>
                     <p></p>
                     <div class="Types">
                         <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
@@ -270,19 +274,42 @@
     </div>
     
     <div class="Footer">
-        <img src="assets/IMG/Logo.png" alt="logo">
-        <div class='Links'>
-            <ul id="Categories">
-                <h2>Categories</h2>
-                <li>Books</li>
-                <li>Articles</li>
-                <li>Research</li>
+        <img src="assets/IMG/Logo.png" alt="Company Logo" />
+
+        <div class="Links">
+
+            <section>
+            <h2>Register</h2>
+            <ul>
+                <li><a href="#">New Registration</a></li>
+                <li><a href="#">Have an Account?</a></li>
             </ul>
-            <ul id="ٌRegister">
-                <h2>Register</h2>
-                <li><a href=""></a>New registration</li>
-                <li>Have an account?</li>   
-            </ul>
+            </section>
+
+            <section>
+            <h2>Contact Us</h2>
+            <address>
+                123 Main Street, City, Country<br />
+                Phone: <a href="tel:+1234567890">+1 234 567 890</a><br />
+                Email: <a href="mailto:info@company.com">info@company.com</a>
+            </address>
+            </section>
+
+            <section>
+            <h2>Follow Us</h2>
+            <div class="SocialMedia">
+                <a href="#" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            </section>
+
         </div>
     </div>
 </div>

@@ -95,14 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) modal.style.display = "none"
   })
 
-  document.querySelector(".btn-display")?.addEventListener("click", () => {
-    alert(`Displaying: ${document.getElementById("modalBookTitle").textContent}`)
-  })
-
-  document.querySelector(".btn-download")?.addEventListener("click", () => {
-    alert(`Downloading: ${document.getElementById("modalBookTitle").textContent}`)
-  })
-
   /* ===============================
      LOAD FAVORITE STATE (PER USER)
   =============================== */
@@ -120,4 +112,3 @@ document.addEventListener("DOMContentLoaded", () => {
     if (icon) icon.classList.add("active")
   })
 })
-x

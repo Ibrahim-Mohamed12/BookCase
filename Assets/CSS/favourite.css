@@ -10,7 +10,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
 }
@@ -29,10 +29,11 @@ body {
 
 .mainSection {
   width: 100%;
-  height: 100vh;
+  min-height: 80vh;
   background-image: url(../IMG/book-5472X3648-wallpaper-4ibfq0znewa7wgxb.jpeg);
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Start NavBar */
@@ -53,13 +54,14 @@ body {
   margin-top: 10px;
 }
 #Logo img {
-  width: 190px;
-  height: 30px;
+  width: clamp(80px, 20vw, 190px);
+  height: auto;
 }
 .NavPages {
   display: flex;
-  width: 500px;
-  font-size: 18px;
+  width: auto;
+  max-width: 500px;
+  font-size: clamp(14px, 2vw, 18px);
   justify-content: space-between;
   box-sizing: border-box;
   padding: 12px;
@@ -91,11 +93,13 @@ body {
 }
 .Register {
   display: flex;
-  width: 180px;
+  width: auto;
+  max-width: 180px;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 4px;
-  gap: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 .Register #Signup {
   display: flex;
@@ -410,13 +414,13 @@ html {
 }
 
 .BooksContainer {
-  width: 85%;
+  width: clamp(90vw, 85%, 100%);
 }
 
 .book-collections {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 40px;
   margin-bottom: 50px;
 }
@@ -440,7 +444,9 @@ html {
 .book-card img {
   width: 100%;
   border-radius: 6px 6px 0 0;
-  height: 450px;
+  height: auto;
+  min-height: 250px;
+  aspect-ratio: 3/4;
   object-fit: cover;
   transition: opacity 0.3s;
   margin-bottom: 18px;
@@ -505,68 +511,198 @@ html {
   color: rgb(244, 174, 174);
 }
 
-/* Start of Footer*/
+/* Footer Container */
 .Footer {
-  background: linear-gradient(45deg, #121212, rgb(25 23 23));
-  height: auto;
+  background: linear-gradient(45deg, #0c0c0c, #070707);
   width: 100%;
+  padding: 100px 0 100px 0;
+  box-shadow: 0 0 18px 2px rgba(19, 19, 19, 0.6);
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 60px 0;
-  box-shadow: 0px 0px 18px 2px #1313139c;
-  gap: 30px;
+  gap: 40px;
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  color: #bdbdbd;
 }
 
+/* Logo */
 .Footer img {
   width: 180px;
-  padding: 0;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
+
+.Footer img:hover {
+  transform: scale(1.05);
+}
+
+/* Links Container */
 .Links {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  width: 100%;
   justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
+  gap: 50px;
+  width: 100%;
+  max-width: 900px;
 }
-.Links ul {
+
+/* Each Section */
+.Links section {
+  min-width: 160px;
+  max-width: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 120px;
-}
-.Links ul h2 {
-  margin-bottom: 7px;
-  font-size: 19px;
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  color: #fff;
+  text-align: center;
 }
 
+/* Section Headings */
+.Links section h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+/* Lists inside sections */
+.Links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* List Items */
 .Links ul li {
-  padding: 8px;
+  margin: 8px 0;
   font-size: 16px;
-  color: rgb(189, 189, 189);
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
+}
+
+/* Links */
+.Links ul li a {
+  color: #bdbdbd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+}
+
+.Links ul li a:hover,
+.Links ul li:hover {
+  color: #f0a500;
+}
+
+/* Address Styling */
+address {
   font-style: normal;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #bdbdbd;
+}
+
+address a {
+  color: #bdbdbd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+address a:hover {
+  color: #f0a500;
+}
+
+.SocialMedia {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.SocialMedia a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #333;
+  border-radius: 50%;
+  color: #bdbdbd;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.SocialMedia a:hover {
+  background-color: #f0a500;
+  color: #121212;
+  transform: scale(1.15);
+  box-shadow: 0 6px 12px rgba(240, 165, 0, 0.6);
+}
+
+/* Optional: Different brand colors on hover */
+.SocialMedia a.facebook:hover {
+  background-color: #1877f2;
+  color: white;
+}
+
+.SocialMedia a.linkedin:hover {
+  background-color: #0a66c2;
+  color: white;
+}
+
+.SocialMedia a.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  color: white;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .Links {
+    max-width: 100%;
+    gap: 30px;
+  }
+
+  .Links section {
+    min-width: 140px;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Footer {
+    padding: 40px 15px;
+    gap: 30px;
+  }
+
+  .Links {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .Links section {
+    max-width: 100%;
+  }
+
 }
 
 /* Add success message styles */
 .success-message {
   position: fixed;
-  top: 20px;
+  top: 100px;
   right: 20px;
   background-color: #4caf50;
   color: white;
-  padding: 16px 24px;
+  padding: 16px 100px;
   border-radius: 8px;
   font-family: "Quicksand", sans-serif;
   font-size: 16px;
@@ -625,7 +761,11 @@ html {
 
 /* Start Responsive for tablet and Mobile */
 
-@media (max-width: 1024px) {
+a:visited {
+  color: #ffffff;
+}
+
+@media (max-width: 1200px) {
   .Container {
     width: 100%;
     height: fit-content;
@@ -647,6 +787,20 @@ html {
   #DropButton {
     display: block;
   }
+
+  .UserProfileDrop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-weight: 500;
+  color: #ffffff;
+  justify-content: space-between;
+}
+
+.UserProfileDrop:hover {
+  background-color: #f0f0f0;
+}
   #Image #Logo-Text p {
     font-size: 38px;
     margin-bottom: 10px;
@@ -843,7 +997,7 @@ html {
 
 
 .book-card {
-  width: 330px;
+  width: clamp(250px, 90vw, 330px);
   height: auto;
   position: relative;
   display: flex;

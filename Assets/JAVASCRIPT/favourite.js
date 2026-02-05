@@ -81,7 +81,6 @@ function setupFavouriteActions(container) {
     if (target.classList.contains("preview-icon")) {
       const card = target.closest(".book-card")
       const title = card.querySelector("p").textContent
-      alert(`Previewing: ${title}`)
     }
   })
 }

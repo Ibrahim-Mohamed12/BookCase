@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Store</title>
     <link rel="stylesheet" href="Assets/CSS/homePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 
@@ -37,6 +38,11 @@
                     <section class="DropList">
                         <img src="assets/IMG/Logo.png">
                         <ul id="List">
+                            <li class="options UserProfileDrop" style="display: none; cursor: pointer;">
+                                <span class="material-symbols-outlined">account_circle</span>
+                                <span id="dropUsername" style="margin-right: auto; padding-left: 8px;"></span>
+                                <span class="material-symbols-outlined" id="dropLogoutIcon" style="margin-left: auto;">logout</span>
+                            </li>
                             <li class="options"><span class="material-symbols-outlined">home</span><a href="homePage.html">Home</a></li>
                             <li class="options"><span class="material-symbols-outlined">category</span><a href="categories.html">Categories</a></li>
                             <li class="options"><span class="material-symbols-outlined">favorite</span><a href="favourite.html">Favorite</a></li>
@@ -44,6 +50,43 @@
                             <li class="options"><span class="material-symbols-outlined">login</span><a href="login.html">Login</a></li>
                             <li class="options"><span class="material-symbols-outlined">add</span><a href="signup.html">Signup</a></li>
                         </ul>
+                        <section class="DropCategoriesContainer" style="display: none; padding: 10px 20px; background: #000;">
+                            <!-- Book Categories -->
+                            <div class="CategoriesSection">
+                                <h3>Books</h3>
+                                <div class="Types">
+                                <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
+                                <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
+                                <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
+                                <a href="categories.html" data-category="Children" data-type="Books">Children</a>
+                                <a href="categories.html" data-category="History" data-type="Books">History</a>
+                                </div>
+                            </div>
+
+                            <!-- Research Categories -->
+                            <div class="CategoriesSection">
+                                <h3>Researches</h3>
+                                <div class="Types">
+                                <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
+                                <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
+                                <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
+                                <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
+                                <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                                </div>
+                            </div>
+
+                            <!-- Article Categories -->
+                            <div class="CategoriesSection">
+                                <h3>Articles</h3>
+                                <div class="Types">
+                                <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
+                                <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
+                                <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
+                                <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
+                                <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                                </div>
+                            </div>
+                            </section>
                     </section>
                 </div>
                 <div class="CategoriesContainer">
@@ -62,7 +105,6 @@
 
                     <!-- Research Categories -->
                     <div class="CategoriesSection">
-                        <h3>Researches</h3>
                         <p></p>
                         <div class="Types">
                             <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
@@ -75,7 +117,6 @@
 
                     <!-- Article Categories -->
                     <div class="CategoriesSection">
-                        <h3>Articles</h3>
                         <p></p>
                         <div class="Types">
                             <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
@@ -424,19 +465,42 @@
         </div>
     </div>
     <div class="Footer">
-        <img src="assets/IMG/Logo.png" alt="logo">
-        <div class='Links'>
-            <ul id="Categories">
-                <h2>Categories</h2>
-                <li>Books</li>
-                <li>Articles</li>
-                <li>Research</li>
+        <img src="assets/IMG/Logo.png" alt="Company Logo" />
+
+        <div class="Links">
+            
+            <section>
+            <h2>Register</h2>
+            <ul>
+                <li><a href="#">New Registration</a></li>
+                <li><a href="#">Have an Account?</a></li>
             </ul>
-            <ul id="ٌRegister">
-                <h2>Register</h2>
-                <li><a href=""></a>New registration</li>
-                <li>Have an account?</li>   
-            </ul>
+            </section>
+
+            <section>
+            <h2>Contact Us</h2>
+            <address>
+                123 Main Street, City, Country<br />
+                Phone: <a href="tel:+1234567890">+1 234 567 890</a><br />
+                Email: <a href="mailto:info@company.com">info@company.com</a>
+            </address>
+            </section>
+
+            <section>
+            <h2>Follow Us</h2>
+            <div class="SocialMedia">
+                <a href="#" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            </section>
+
         </div>
     </div>
 </div>

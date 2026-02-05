@@ -13,31 +13,19 @@
             <div class="navbar">
                 <div class="NavElements">
                     <a id="Logo" href="homePage.html"><img src="assets/IMG/Logo.png"></a>
-                    <section class="NavPages">
-                        <a id="NavLink1" href="homePage.html">Home</a>
-                        <a id="NavLink2" href="categories.html">Categories</a>
-                        <a id="NavLink3" href="favourite.html">Favourite</a>
-                        <a id="NavLink4" href="about.html">About Us</a>
-                    </section>
+                    
+                    <!-- Add user profile section when logged in -->
+                    <section class="UserProfile" style="display: none;">
+                        <span class="material-symbols-outlined" id="userIcon">account_circle</span>
+                        <span id="username"></span>
+                        <button id="logoutBtn">Logout</button>
+                    </section>        
                     <section class="Register">
                         <a href="login.html" id="Login">Log in</a>
-                        <a href="signup.html" id="Signup" class="active">Signup</a>
-                    </section>
-                    <p id="DropButton"><span class="material-symbols-outlined">menu</span></p>
-                    <section class="DropList">
-                        <img src="assets/IMG/Logo.png">
-                        <ul id="List">
-                            <li class="options"><span class="material-symbols-outlined">home</span><a href="homePage.html">Home</a></li>
-                            <li class="options"><span class="material-symbols-outlined">category</span><a href="categories.html">Categories</a></li>
-                            <li class="options"><span class="material-symbols-outlined">favorite</span><a href="favourite.html">Favorite</a></li>
-                            <li class="options"><span class="material-symbols-outlined">info</span><a href="about.html">About Us</a></li>
-                            <li class="options"><span class="material-symbols-outlined">login</span><a href="login.html">Login</a></li>
-                            <li class="options"><span class="material-symbols-outlined">add</span><a href="signup.html">Signup</a></li>
-                        </ul>
+                        <a href="signup.html" id="Signup">Signup</a>
                     </section>
                 </div>
             </div>
-            
             <div class="authContainer">
                 <div class="authBox">
                     <h1>Create Account</h1>

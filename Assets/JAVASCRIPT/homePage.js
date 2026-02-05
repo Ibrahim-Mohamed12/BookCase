@@ -129,3 +129,21 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".book-collections").forEach((section) => {
   observer.observe(section)
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+  const categoriesToggle = document.querySelector('#List li.options:nth-child(3)') // 3rd item is Categories li in your list
+  const dropCategoriesContainer = document.querySelector('.DropCategoriesContainer')
+
+  if (categoriesToggle && dropCategoriesContainer) {
+    categoriesToggle.addEventListener('click', (e) => {
+      e.preventDefault() // prevent default anchor behavior if any
+
+      // Toggle visibility
+      if (dropCategoriesContainer.style.display === "none" || dropCategoriesContainer.style.display === "") {
+        dropCategoriesContainer.style.display = "block"
+      } else {
+        dropCategoriesContainer.style.display = "none"
+      }
+    })
+  }
+})

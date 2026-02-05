@@ -3,20 +3,26 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm")
   const signupForm = document.getElementById("signupForm")
+  const loginError = document.getElementById("loginError")
 
   // Login form submission
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault()
 
-      const email = document.getElementById("email").value
-      const password = document.getElementById("password").value
+      const email = document.getElementById("email").value.trim()
+      const password = document.getElementById("password").value.trim()
+
+      // Hide error initially
+      if (loginError) loginError.style.display = "none"
 
       // Get users from localStorage
       const users = JSON.parse(localStorage.getItem("users")) || []
 
       // Find user
-      const user = users.find((u) => u.email === email && u.password === password)
+      const user = users.find(
+        (u) => u.email === email && u.password === password
+      )
 
       if (user) {
         // Save current user
@@ -25,16 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
           JSON.stringify({
             name: user.fullname,
             email: user.email,
-          }),
+          })
         )
 
-        // Set success flag for showing message
+        // Set success flag
         sessionStorage.setItem("loginSuccess", "true")
 
         // Redirect to home
         window.location.href = "homePage.html"
       } else {
-        alert("Invalid email or password!")
+        // Show red error message
+        if (loginError) loginError.style.display = "block"
       }
     })
   }
@@ -47,7 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const fullname = document.getElementById("fullname").value
       const email = document.getElementById("email").value
       const password = document.getElementById("password").value
-      const confirmPassword = document.getElementById("confirmPassword").value
+      const confirmPassword =
+        document.getElementById("confirmPassword").value
       const terms = document.getElementById("terms").checked
 
       // Validation
@@ -86,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         JSON.stringify({
           name: fullname,
           email: email,
-        }),
+        })
       )
 
       // Set success flag
