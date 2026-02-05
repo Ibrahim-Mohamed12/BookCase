@@ -30,11 +30,10 @@ body {
 
 .mainSection {
   width: 100%;
-  min-height: 80vh;
+  height: 100vh;
   background-image: url(../IMG/book-5472X3648-wallpaper-4ibfq0znewa7wgxb.jpeg);
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 /* Navbar */
@@ -56,15 +55,14 @@ body {
 }
 
 #Logo img {
-  width: clamp(80px, 20vw, 190px);
-  height: auto;
+  width: 190px;
+  height: 30px;
 }
 
 .NavPages {
   display: flex;
-  width: auto;
-  max-width: 500px;
-  font-size: clamp(14px, 2vw, 18px);
+  width: 500px;
+  font-size: 18px;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 12px;
@@ -98,8 +96,7 @@ body {
 
 .Register {
   display: flex;
-  width: auto;
-  max-width: 180px;
+  width: 180px;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 4px;
@@ -598,9 +595,6 @@ html {
   text-align: center;
 }
 
-a:visited {
-  color: #ffffff;
-}
 /* Section Headings */
 .Links section h2 {
   margin-bottom: 16px;
@@ -702,12 +696,10 @@ address a:hover {
   color: white;
 }
 
-
-
 /* Responsive */
 @media (max-width: 768px) {
   .Links {
-    max-width: 100%;
+    max-width: 400px;
     gap: 30px;
   }
 
@@ -719,7 +711,7 @@ address a:hover {
 
 @media (max-width: 480px) {
   .Footer {
-    padding: 40px 15px;
+    padding: 40px 0px;
     gap: 30px;
   }
 
@@ -727,6 +719,7 @@ address a:hover {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    max-width: 300px;
   }
 
   .Links section {
@@ -734,6 +727,7 @@ address a:hover {
   }
 
 }
+
 
 /* Responsive */
 @media (max-width: 1200px) {
