@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.setItem("loginSuccess", "true")
 
         // Redirect to home
-        window.location.href = "homePage.html"
+        window.location.href = "index.html"
       } else {
         // Show red error message
         if (loginError) loginError.style.display = "block"
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.setItem("loginSuccess", "true")
 
       // Redirect to home
-      window.location.href = "homePage.html"
+      window.location.href = "index.html"
     })
   }
 })
