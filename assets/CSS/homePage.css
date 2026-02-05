@@ -3,7 +3,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 * {
@@ -23,10 +23,11 @@ a:visited {
 }
 .mainSection {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(../IMG/book-5472X3648-wallpaper-4ibfq0znewa7wgxb.jpeg);
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Start NavBar */
@@ -42,21 +43,26 @@ a:visited {
   width: 95%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   box-sizing: border-box;
-  padding: 15px;
+  padding: clamp(10px, 2vw, 15px);
   margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 #Logo img {
-  width: 190px;
-  height: 30px;
+  width: clamp(100px, 20vw, 190px);
+  height: auto;
 }
 .NavPages {
   display: flex;
-  width: 500px;
-  font-size: 18px;
+  width: auto;
+  max-width: 500px;
+  font-size: clamp(14px, 2vw, 18px);
   justify-content: space-between;
   box-sizing: border-box;
   padding: 12px;
+  gap: 20px;
 }
 .NavPages a:hover {
   animation: navAnimation infinite 1.3s linear;
@@ -85,7 +91,8 @@ a:visited {
 }
 .Register {
   display: flex;
-  width: 180px;
+  width: auto;
+  max-width: 180px;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 4px;
@@ -176,11 +183,11 @@ a:visited {
   right: 0;
   background-color: #0c0c0ce5;
   color: #ffffff;
-  width: 400px;
+  width: min(100%, 400px);
   height: 100vh;
   box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.751);
   max-height: 0;
-  overflow: hidden;
+  overflow: auto;
   z-index: 1;
   transition: max-height 0.3s ease-out;
 }
@@ -235,21 +242,25 @@ a:visited {
 .CategoriesContainer {
   position: absolute;
   top: 105%;
-  width: 90%;
+  width: 95%;
+  max-width: 90vw;
   background-color: #0c0c0ce5;
   box-shadow: 0px 0px 20px 0px rgba(31, 31, 31, 0.751);
   display: none;
   z-index: 100;
   border-radius: 8px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .CategoriesSection {
-  padding: 30px;
+  padding: clamp(15px, 3vw, 30px);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  gap: 32px;
+  gap: clamp(15px, 3vw, 32px);
+  flex-wrap: wrap;
 }
 .CategoriesSection p {
   background-color: #ffffff;
@@ -314,7 +325,8 @@ a:visited {
   background-image: linear-gradient(rgba(255, 255, 255, 0.04), transparent), url("/assets/IMG/Wallpaper1.jpg");
 }
 #ImageText div img {
-  width: 300px;
+  width: clamp(150px, 40vw, 300px);
+  height: auto;
   margin-bottom: 10px;
   animation: logoFloat 2s infinite linear;
 }
@@ -336,25 +348,27 @@ a:visited {
   font-weight: 500;
   font-style: normal;
   margin-bottom: 10px;
-  font-size: 40px;
+  font-size: clamp(20px, 6vw, 40px);
+  padding: 0 20px;
 }
 
 .contentContainer {
   width: 100%;
-  height: 900px;
+  min-height: auto;
   display: flex;
   justify-content: center;
   background-color: #0c0c0c;
   box-shadow: 0 -20px 20px 20px #0c0c0c;
+  padding: 40px 20px;
 }
 .content {
   width: 100%;
-  height: 650px;
+  height: auto;
   display: flex;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 40px;
   flex-direction: column;
-  gap: 100px;
+  gap: clamp(40px, 10vw, 100px);
   background-color: #0c0c0c;
 }
 .content h2 {
@@ -362,13 +376,20 @@ a:visited {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-size: 35px;
-  width: 30%;
+  font-size: clamp(24px, 5vw, 35px);
+  width: 90%;
+  max-width: 600px;
   text-align: center;
   box-sizing: border-box;
   color: white;
   position: relative;
-  margin-bottom: 25px;
+}
+.content h2::before,
+.content h2::after {
+  content: "✦";
+  position: absolute;
+  color: #fff;
+  top: -9px;
 }
 
 .content h2::before {
@@ -381,28 +402,33 @@ a:visited {
 .quote {
   font-family: "Dancing Script", cursive;
   color: rgba(255, 255, 255, 0.7);
-  margin-top: -70px;
-  font-size: 24px;
+  margin-top: -40px;
+  font-size: clamp(18px, 3vw, 24px);
   text-align: center;
   letter-spacing: 1px;
+  padding: 0 20px;
 }
 .content img {
-  width: 400px;
-  height: 400px;
+  width: clamp(200px, 60vw, 400px);
+  height: auto;
+  aspect-ratio: 1;
   position: relative;
-  top: 40px;
-  right: 23px;
+  top: 0;
+  right: 0;
   border-radius: 10px;
 }
 .Img_Text {
   display: flex;
-  justify-content: space-between;
-  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(20px, 5vw, 60px);
+  width: 100%;
 }
 .content p {
   font-family: "Dancing Script", cursive;
-  width: 450px;
-  font-size: 20px;
+  width: 90%;
+  max-width: 450px;
+  font-size: clamp(16px, 2.5vw, 20px);
   color: #ffffff;
   opacity: 0;
   transform: translateY(50px) scale(0.97);
@@ -414,21 +440,26 @@ a:visited {
 .textSection1 {
   display: flex;
   flex-direction: column;
-  gap: 210px;
+  gap: clamp(100px, 15vw, 210px);
+  width: 100%;
 }
 .textSection1 p:first-child ~ p {
   position: relative;
-  right: 60px;
-  width: 485px;
+  right: 0;
+  width: 90%;
+  max-width: 485px;
 }
 .textSection2 {
   display: flex;
   flex-direction: column;
-  gap: 210px;
+  gap: clamp(100px, 15vw, 210px);
+  width: 100%;
 }
 .textSection2 p:first-child ~ p {
   position: relative;
-  left: 80px;
+  left: 0;
+  width: 90%;
+  max-width: 485px;
 }
 
 .content p::before {
@@ -555,29 +586,44 @@ html {
 /* Start Best of all Categories */
 
 .BestContainer {
-  padding: 80px 40px 15px 40px;
+  padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 40px) clamp(10px, 3vw, 15px);
   text-align: center;
   position: relative;
   display: flex;
   margin-top: 20px;
   flex-direction: column;
   align-items: center;
-  gap: 70px;
+  gap: clamp(40px, 10vw, 70px);
   background-color: #111111;
 }
 .BestContainer #Title {
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
-  font-size: 35px;
-  width: 100%;
-  margin-bottom: 25px;
+  font-size: clamp(24px, 5vw, 35px);
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 34px;
   text-align: center;
   box-sizing: border-box;
-  color: white;
-  position: relative;
   color: #ffffff;
+  position: relative;
+}
+.BestContainer #Title::before,
+.BestContainer #Title::after {
+  content: "✦";
+  position: absolute;
+  color: #fff;
+  top: -9px;
+}
+
+.BestContainer #Title::before {
+  Left: -2px;
+}
+
+.BestContainer #Title::after {
+  right: -2px;
 }
 
 .book-collections {
@@ -602,7 +648,7 @@ html {
 }
 
 .book-card {
-  width: 330px;
+  width: clamp(250px, 90vw, 330px);
   height: auto;
   position: relative;
   display: flex;
@@ -692,7 +738,7 @@ html {
   cursor: pointer;
 }
 .book-card:hover {
-  width: 350px;
+  width: clamp(260px, 95vw, 350px);
 }
 .book-card:hover img,
 .book-card:has(p:hover) img {
@@ -703,7 +749,9 @@ html {
 .book-card img {
   width: 100%;
   border-radius: 8px 8px 0 0;
-  height: 450px;
+  height: auto;
+  min-height: 250px;
+  aspect-ratio: 3/4;
   transition: transform 0.3s;
   margin-bottom: 18px;
 }
@@ -712,15 +760,19 @@ html {
 }
 .pagination {
   text-align: center;
-  padding: 10px 70px;
+  padding: clamp(10px, 3vw, 10px) clamp(15px, 5vw, 70px);
   border-radius: 10px;
   background-color: #181818b8;
   margin: 0px 0px 50px 0px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 .pagination button {
-  margin: 0 4px;
-  padding: 12px 20px;
-  font-size: 16px;
+  margin: 4px;
+  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
+  font-size: clamp(14px, 2vw, 16px);
   border: 1px solid rgb(20, 20, 20);
   background-color: #0e0e0e;
   border-radius: 10px;
@@ -739,11 +791,11 @@ html {
 /* Start of Recommendation */
 
 .Recommendations {
-  padding: 40px;
+  padding: clamp(20px, 5vw, 40px);
   margin-top: 40px;
   text-align: center;
   display: flex;
-  gap: 70px;
+  gap: clamp(40px, 10vw, 70px);
   flex-direction: column;
   align-items: center;
   background-color: #0c0c0c;
@@ -751,16 +803,32 @@ html {
 .Recommendations #Title {
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
-  font-size: 35px;
-  width: 100%;
-  margin-bottom: 25px;
+  font-size: clamp(24px, 5vw, 35px);
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 34px;
   text-align: center;
   box-sizing: border-box;
-  color: white;
-  position: relative;
   color: #ffffff;
+  position: relative;
+}
+
+.Recommendations #Title::before,
+.Recommendations #Title::after {
+  content: "✦";
+  position: absolute;
+  color: #fff;
+  top: -9px;
+}
+
+.Recommendations #Title::before {
+  Left: -2px;
+}
+
+.Recommendations #Title::after {
+  right: -2px;
 }
 
 .book-page1 {
@@ -776,15 +844,19 @@ html {
 }
 .pagination1 {
   text-align: center;
-  padding: 10px 70px;
+  padding: clamp(10px, 3vw, 10px) clamp(15px, 5vw, 70px);
   border-radius: 10px;
   background-color: #181818b8;
   margin: 0px 0px 50px 0px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 .pagination1 button {
-  margin: 0 4px;
-  padding: 12px 20px;
-  font-size: 16px;
+  margin: 4px;
+  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 20px);
+  font-size: clamp(14px, 2vw, 16px);
   border: 1px solid rgb(20, 20, 20);
   background-color: #0e0e0e;
   border-radius: 10px;
@@ -830,11 +902,13 @@ html {
   margin: 5% auto;
   padding: 0;
   border-radius: 12px;
-  width: 80%;
-  max-width: 800px;
+  width: 95%;
+  max-width: 900px;
   position: relative;
   animation: slideIn 0.3s ease;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 @keyframes slideIn {
@@ -866,16 +940,19 @@ html {
 
 .modal-body {
   display: flex;
-  padding: 40px;
+  padding: clamp(20px, 5vw, 40px);
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .modal-body img {
-  width: 250px;
-  height: 350px;
+  width: clamp(200px, 80vw, 250px);
+  height: auto;
+  aspect-ratio: 1/1.4;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
 }
 
 .modal-details {
@@ -1154,7 +1231,7 @@ address a:hover {
 /* Responsive */
 @media (max-width: 768px) {
   .Links {
-    max-width: 400px;
+    max-width: 100%;
     gap: 30px;
   }
 
@@ -1166,7 +1243,7 @@ address a:hover {
 
 @media (max-width: 480px) {
   .Footer {
-    padding: 40px 0px;
+    padding: 40px 15px;
     gap: 30px;
   }
 
@@ -1174,7 +1251,6 @@ address a:hover {
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    max-width: 300px;
   }
 
   .Links section {
@@ -1294,12 +1370,6 @@ address a:hover {
   }
 }
 @media (max-width: 600px) {
-  .pagination{
-    padding: 10px 30px;
-  }
-  .pagination1{
-    padding: 10px 30px;
-  }
   .Container {
     width: 100%;
     height: fit-content;
@@ -1347,12 +1417,7 @@ address a:hover {
     height: auto;
   }
   .Recommendations #Title {
-    font-size: 30px;
-    width: 100%;
-  }
-  .BestContainer #Title {
-    font-size: 30px;
-    width: 100%;
+    font-size: 35px;
   }
 }
 @media (max-width: 420px) {
@@ -1417,6 +1482,391 @@ address a:hover {
   color: rgb(244, 174, 174);
 }
 
+/* Responsive tweaks without changing existing styles */
+
+/* Tablet and Large Mobile - 768px to 1023px */
+@media (max-width: 1023px) {
+  .NavPages,
+  .Register,
+  .UserProfile {
+    display: none !important;
+  }
+
+  #DropButton {
+    display: block !important;
+  }
+
+  .DropList img {
+    margin: 20px 0 40px 0;
+    width: 150px;
+  }
+
+  .DropList #List li {
+    font-size: 18px;
+    padding: 10px 10px;
+  }
+
+  .book-page,
+  .book-page1 {
+    gap: 20px;
+  }
+
+  .book-card {\n    width: clamp(220px, 45vw, 300px);\n  }
+
+  .book-card:hover {
+    width: clamp(240px, 50vw, 320px);
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+  }
+
+  .modal-buttons button {
+    width: 100%;
+  }
+
+  .Footer {
+    padding: 50px 20px;
+    gap: 30px;
+  }
+}
+
+/* Small Mobile - 480px to 767px */
+@media (max-width: 767px) {
+  .NavPages,
+  .Register,
+  .UserProfile {
+    display: none !important;
+  }
+
+  #DropButton {
+    display: block !important;
+  }
+
+  .navbar {
+    margin-bottom: 10px;
+  }
+
+  .NavElements {
+    width: 98%;
+    padding: 8px;
+  }
+
+  #Logo img {
+    width: clamp(80px, 18vw, 140px);
+  }
+
+  .mainSection {
+    min-height: 70vh;
+  }
+
+  #ImageText {
+    top: 15%;
+  }
+
+  .DropList {
+    width: 100%;
+  }
+
+  .DropList img {
+    width: 130px;
+    margin: 15px 0 30px 0;
+  }
+
+  .DropList #List li {
+    font-size: 16px;
+  }
+
+  .CategoriesContainer {
+    width: 95%;
+  }
+
+  .book-page,
+  .book-page1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .book-card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .book-card img {
+    min-height: 200px;
+  }
+
+  .pagination,
+  .pagination1 {
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .pagination button,
+  .pagination1 button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 15% auto;
+  }
+
+  .modal-body {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .modal-body img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .modal-details h2 {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+
+  .modal-author {
+    font-size: 14px;
+  }
+
+  .close-modal {
+    right: 10px;
+    top: 10px;
+    font-size: 24px;
+  }
+
+  .success-message {
+    top: 60px;
+    right: 10px;
+    left: 10px;
+    padding: 12px 15px;
+    font-size: 12px;
+  }
+
+  .Footer {
+    padding: 40px 15px;
+    gap: 20px;
+  }
+
+  .Footer img {
+    width: 120px;
+  }
+
+  .Links {
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .Links section {
+    min-width: 110px;
+  }
+
+  .Links section h2 {
+    font-size: 16px;
+  }
+
+  .Links ul li {
+    font-size: 13px;
+  }
+
+  .SocialMedia {
+    gap: 12px;
+  }
+
+  .SocialMedia a {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .content h2::before,
+  .content h2::after,
+  .BestContainer #Title::before,
+  .BestContainer #Title::after,
+  .Recommendations #Title::before,
+  .Recommendations #Title::after {
+    display: none;
+  }
+}
+
+/* Extra Small Mobile - below 480px */
+@media (max-width: 479px) {
+  #Logo img {
+    width: clamp(60px, 15vw, 100px);
+  }
+
+  #ImageText div img {
+    width: clamp(80px, 25vw, 140px);
+  }
+
+  #ImageText #Logo-Text p {
+    font-size: clamp(12px, 3.5vw, 20px);
+  }
+
+  .mainSection {
+    min-height: 60vh;
+  }
+
+  .NavElements {
+    width: 100%;
+    padding: 5px;
+    gap: 5px;
+  }
+
+  .DropList {
+    width: 100%;
+  }
+
+  .DropList img {
+    width: 100px;
+    margin: 10px 0 20px 0;
+  }
+
+  .DropList #List li {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .contentContainer {
+    padding: 30px 10px;
+  }
+
+  .content h2 {
+    font-size: clamp(16px, 4vw, 22px);
+    width: 95%;
+  }
+
+  .quote {
+    font-size: clamp(12px, 2.5vw, 16px);
+    padding: 0 10px;
+  }
+
+  .content img {
+    width: clamp(140px, 60vw, 250px);
+  }
+
+  .content p {
+    font-size: clamp(13px, 2vw, 16px);
+    width: 95%;
+  }
+
+  .textSection1 p::before,
+  .textSection2 p::before,
+  .textSection1 p::after,
+  .textSection2 p::after {
+    display: none !important;
+  }
+
+  .BestContainer #Title,
+  .Recommendations #Title {
+    font-size: clamp(16px, 4vw, 22px);
+    width: 95%;
+  }
+
+  .book-card {
+    width: 100%;
+    max-width: calc(100% - 10px);
+  }
+
+  .book-card img {
+    min-height: 180px;
+  }
+
+  .book-card p {
+    font-size: 13px;
+  }
+
+  .pagination,
+  .pagination1 {
+    padding: 5px;
+    gap: 2px;
+  }
+
+  .pagination button,
+  .pagination1 button {
+    padding: 6px 8px;
+    margin: 1px;
+    font-size: 11px;
+  }
+
+  .modal-content {
+    width: 97%;
+    margin: 20% auto;
+  }
+
+  .modal-body {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .modal-details h2 {
+    font-size: clamp(14px, 3.5vw, 18px);
+  }
+
+  .modal-author,
+  .modal-tags {
+    font-size: 12px;
+  }
+
+  .modal-price {
+    font-size: 18px;
+  }
+
+  .modal-buttons button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .success-message {
+    top: 50px;
+    right: 5px;
+    left: 5px;
+    padding: 10px 10px;
+    font-size: 11px;
+  }
+
+  .Footer {
+    padding: 30px 10px;
+  }
+
+  .Footer img {
+    width: 100px;
+  }
+
+  .Links {
+    gap: 15px;
+  }
+
+  .Links section {
+    min-width: 100px;
+  }
+
+  .Links section h2 {
+    font-size: 14px;
+  }
+
+  .Links ul li {
+    font-size: 12px;
+    margin: 5px 0;
+  }
+
+  address {
+    font-size: 12px;
+  }
+
+  .SocialMedia {
+    gap: 10px;
+  }
+
+  .SocialMedia a {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+}
 .DropCategoriesContainer {
   position: relative;
   top: -211px;
@@ -1443,131 +1893,4 @@ address a:hover {
 
 .DropCategoriesContainer .Types a:hover {
   text-decoration: underline;
-}
-
-/* Base styles as you provided... */
-
-/* Responsive for tablets and medium screens */
-@media (max-width: 1700px) {
-  .contentContainer {
-    height: auto;
-    padding: 40px 0px;
-  }
-
-  .content {
-    height: auto;
-    margin-top: 40px;
-    gap: 60px;
-    padding: 0 20px;
-  }
-
-  .content h2 {
-    width: 60%;
-    font-size: 30px;
-  }
-
-  .quote {
-    font-size: 20px;
-    margin-top: -50px;
-  }
-
-  .Img_Text {
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-  }
-
-  /* Adjust positional offset on paragraphs */
-  .textSection1 p:first-child ~ p,
-  .textSection2 p:first-child ~ p {
-    position: static !important;
-    width: 100% !important;
-    right: auto !important;
-    left: auto !important;
-  }
-
-  .textSection2 p:first-child {
-    margin-top: 20px;
-  }
-  .textSection2 p:last-child {
-    margin-bottom: 34px;
-  }
-  .textSection1{
-    gap: 50px;
-    width: 60%;
-  }
-  .textSection2{
-    gap: 50px;
-    width: 60%;
-  }
-  .content img {
-    width: 300px;
-    height: 300px;
-    top: 20px;
-    right: 0;
-  }
-}
-
-/* Responsive for mobile phones and small screens */
-@media (max-width: 600px) {
-  .contentContainer {
-    height: auto;
-    padding: 50px 0px;
-  }
-
-  .content {
-    margin-top: 30px;
-    gap: 40px;
-    padding: 0 10px;
-  }
-
-  .content h2 {
-    width: 90%;
-    font-size: 28px;
-  }
-
-  .quote {
-    font-size: 18px;
-    margin-top: -40px;
-    padding: 0 10px;
-  }
-
-  .Img_Text {
-    gap: 30px;
-  }
-
-  .content p {
-    width: 100%;
-    font-size: 11px;
-    text-align: center;
-  }
-  /* Remove positional offset on paragraphs */
-  .textSection1 p:first-child ~ p,
-  .textSection2 p:first-child ~ p {
-    position: static !important;
-    width: 100% !important;
-    right: auto !important;
-    left: auto !important;
-  }
-
-  /* Override animation styles for better readability on small screens */
-  .content p {
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-    transition: none !important;
-  }
-
-  /* Hide decorative bullets and lines */
-  .content p::before,
-  .content p::after {
-    display: none;
-  }
-
-  .content img {
-    width: 250px;
-    height: 250px;
-    top: 10px;
-    right: 0;
-  }
 }

@@ -12,7 +12,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
 }
@@ -39,10 +39,11 @@ a:visited {
 
 .mainSection {
   width: 100%;
-  height: 100vh;
+  min-height: 80vh;
   background-image: url(../IMG/book-5472X3648-wallpaper-4ibfq0znewa7wgxb.jpeg);
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Start NavBar */
@@ -63,13 +64,14 @@ a:visited {
   margin-top: 10px;
 }
 #Logo img {
-  width: 190px;
-  height: 30px;
+  width: clamp(80px, 20vw, 190px);
+  height: auto;
 }
 .NavPages {
   display: flex;
-  width: 500px;
-  font-size: 18px;
+  width: auto;
+  max-width: 500px;
+  font-size: clamp(14px, 2vw, 18px);
   justify-content: space-between;
   box-sizing: border-box;
   padding: 12px;
@@ -101,11 +103,13 @@ a:visited {
 }
 .Register {
   display: flex;
-  width: 180px;
+  width: auto;
+  max-width: 180px;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 4px;
-  gap: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 .Register #Signup {
   display: flex;
@@ -367,7 +371,7 @@ html {
   box-shadow: 0 -20px 20px 20px #0c0c0c;
 }
 .CategoryDetails {
-  padding: 50px;
+  padding: clamp(20px, 5vw, 50px);
 }
 #category-title {
   text-align: center;
@@ -375,7 +379,7 @@ html {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 40px;
+  font-size: clamp(28px, 6vw, 40px);
   color: #ffffff;
 }
 #category-content {
@@ -383,7 +387,7 @@ html {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 20px;
+  font-size: clamp(14px, 3vw, 20px);
   text-align: center;
   color: #ffffff;
 }
@@ -473,7 +477,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 /* Add styles for book actions overlay */
 .book-card {
-  width: 350px;
+  width: clamp(250px, 90vw, 350px);
   height: auto;
   position: relative;
   display: flex;
@@ -578,8 +582,10 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 .book-card img {
   width: 100%;
-  border-radius: 8px 8px 0 0;
-  height: 450px;
+  border-radius: 6px 6px 0 0;
+  height: auto;
+  min-height: 250px;
+  aspect-ratio: 3/4;
   transition: transform 0.3s;
   margin-bottom: 18px;
 }
@@ -587,8 +593,8 @@ input[type="search"]::-webkit-search-cancel-button {
 .book-collections {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(1, 1fr);
-  column-gap: 0px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  column-gap: 20px;
   row-gap: 40px;
 }
 
@@ -597,7 +603,7 @@ input[type="search"]::-webkit-search-cancel-button {
     width: 300px;
   }
   .BooksContainer {
-    width: 70%;
+    width: 50%;
   }
   .book-card {
     width: 100%;
@@ -1014,10 +1020,12 @@ address a:hover {
   color: white;
 }
 
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .Links {
-    max-width: 400px;
+    max-width: 100%;
     gap: 30px;
   }
 
@@ -1029,7 +1037,7 @@ address a:hover {
 
 @media (max-width: 480px) {
   .Footer {
-    padding: 40px 0px;
+    padding: 40px 15px;
     gap: 30px;
   }
 
@@ -1037,7 +1045,6 @@ address a:hover {
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    max-width: 300px;
   }
 
   .Links section {
@@ -1045,7 +1052,39 @@ address a:hover {
   }
 
 }
+/* Responsive for tablets */
 
+@media (max-width: 768px) {
+  .Footer {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+  .Footer img {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+  .Links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Links ul {
+    margin-bottom: 20px;
+  }
+}
+
+/* responsive for mobiles */
+
+@media (max-width: 480px) {
+  .Links ul h2 {
+    font-size: 19px;
+  }
+  .Links ul li {
+    padding: 6px;
+    font-size: 16px;
+  }
+}
+
+/* end of Footer*/
 
 /* Start Responsive for tablet and Mobile */
 

@@ -10,7 +10,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
 }
@@ -29,10 +29,11 @@ body {
 
 .mainSection {
   width: 100%;
-  height: 100vh;
+  min-height: 80vh;
   background-image: url(../IMG/book-5472X3648-wallpaper-4ibfq0znewa7wgxb.jpeg);
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Start NavBar */
@@ -53,13 +54,14 @@ body {
   margin-top: 10px;
 }
 #Logo img {
-  width: 190px;
-  height: 30px;
+  width: clamp(80px, 20vw, 190px);
+  height: auto;
 }
 .NavPages {
   display: flex;
-  width: 500px;
-  font-size: 18px;
+  width: auto;
+  max-width: 500px;
+  font-size: clamp(14px, 2vw, 18px);
   justify-content: space-between;
   box-sizing: border-box;
   padding: 12px;
@@ -91,11 +93,13 @@ body {
 }
 .Register {
   display: flex;
-  width: 180px;
+  width: auto;
+  max-width: 180px;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 4px;
-  gap: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 .Register #Signup {
   display: flex;
@@ -293,7 +297,6 @@ body {
   font-weight: 500;
   margin-bottom: 10px;
   font-size: 40px;
-  text-align: center;
 }
 
 html {
@@ -411,13 +414,13 @@ html {
 }
 
 .BooksContainer {
-  width: 85%;
+  width: clamp(90vw, 85%, 100%);
 }
 
 .book-collections {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 40px;
   margin-bottom: 50px;
 }
@@ -441,7 +444,9 @@ html {
 .book-card img {
   width: 100%;
   border-radius: 6px 6px 0 0;
-  height: 450px;
+  height: auto;
+  min-height: 250px;
+  aspect-ratio: 3/4;
   object-fit: cover;
   transition: opacity 0.3s;
   margin-bottom: 18px;
@@ -657,10 +662,12 @@ address a:hover {
   color: white;
 }
 
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .Links {
-    max-width: 400px;
+    max-width: 100%;
     gap: 30px;
   }
 
@@ -672,7 +679,7 @@ address a:hover {
 
 @media (max-width: 480px) {
   .Footer {
-    padding: 40px 0px;
+    padding: 40px 15px;
     gap: 30px;
   }
 
@@ -680,7 +687,6 @@ address a:hover {
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    max-width: 300px;
   }
 
   .Links section {
@@ -688,7 +694,6 @@ address a:hover {
   }
 
 }
-
 
 /* Add success message styles */
 .success-message {
@@ -992,7 +997,7 @@ a:visited {
 
 
 .book-card {
-  width: 330px;
+  width: clamp(250px, 90vw, 330px);
   height: auto;
   position: relative;
   display: flex;
