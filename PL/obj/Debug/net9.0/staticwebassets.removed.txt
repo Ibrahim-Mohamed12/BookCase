@@ -1,0 +1,3 @@
+D:\Visual Studio Projects\PL\wwwroot\js\site.js
+D:\Visual Studio Projects\PL\wwwroot\favicon.ico
+D:\Visual Studio Projects\PL\wwwroot\css\site.css

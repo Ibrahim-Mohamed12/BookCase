@@ -1,0 +1,231 @@
+@{
+    ViewData["Title"] = "About Us - BookCase";
+    Layout = "_Layout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/about.css">
+</head>
+
+<div class="Container">
+    <div class="mainSection">
+        <div class="navbar">
+            <div class="NavElements">
+                <a id="Logo" asp-action="index" asp-controller="Home"><img src="~/Images/Logo.png"></a>
+                <section class="NavPages">
+                    <a id="NavLink1" asp-action="index" asp-controller="Home">Home</a>
+                    <a id="NavLink2" asp-action="categories" asp-controller="Home">Categories</a>
+                    <a id="NavLink3" asp-action="favourite" asp-controller="Home">Favourite</a>
+                    <a id="NavLink4" asp-action="about" asp-controller="Home">About Us</a>
+                </section>
+                <section class="Register">
+                    <a asp-action="login" asp-controller="Home" id="Login">Log in</a>
+                    <a asp-action="signup" asp-controller="Home" id="Signup">Signup</a>
+                </section>
+                <!-- Add user profile section when logged in -->
+                <section class="UserProfile" style="display: none;">
+                    <span class="material-symbols-outlined" id="userIcon">account_circle</span>
+                    <span id="username"></span>
+                    <button id="logoutBtn">Logout</button>
+                </section>
+                <p id="DropButton"><span class="material-symbols-outlined">menu</span></p>
+                <section class="DropList">
+                    <img src="~/Images/Logo.png">
+                    <ul id="List">
+                        <li class="options UserProfileDrop" style="display: none; cursor: pointer;">
+                            <span class="material-symbols-outlined">account_circle</span>
+                            <span id="dropUsername" style="margin-right: auto; padding-left: 8px;"></span>
+                            <span class="material-symbols-outlined" id="dropLogoutIcon" style="margin-left: auto;">logout</span>
+                        </li>
+                        <li class="options"><span class="material-symbols-outlined">home</span><a asp-action="index" asp-controller="Home">Home</a></li>
+                        <li class="options"><span class="material-symbols-outlined">category</span><a asp-action="categories" asp-controller="Home">Categories</a></li>
+                        <li class="options"><span class="material-symbols-outlined">favorite</span><a asp-action="favourite" asp-controller="Home">Favorite</a></li>
+                        <li class="options"><span class="material-symbols-outlined">info</span><a asp-action="about" asp-controller="Home">About Us</a></li>
+                        <li class="options"><span class="material-symbols-outlined">login</span><a asp-action="login" asp-controller="Home">Login</a></li>
+                        <li class="options"><span class="material-symbols-outlined">add</span><a asp-action="signup" asp-controller="Home">Signup</a></li>
+                    </ul>
+                    <section class="DropCategoriesContainer" style="display: none; padding: 10px 20px; background: #000;">
+                        <!-- Book Categories -->
+                        <div class="CategoriesSection">
+                            <h3>Books</h3>
+                            <div class="Types">
+                                <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
+                                <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
+                                <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
+                                <a href="categories.html" data-category="Children" data-type="Books">Children</a>
+                                <a href="categories.html" data-category="History" data-type="Books">History</a>
+                            </div>
+                        </div>
+
+                        <!-- Research Categories -->
+                        <div class="CategoriesSection">
+                            <h3>Researches</h3>
+                            <div class="Types">
+                                <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
+                                <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
+                                <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
+                                <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
+                                <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                            </div>
+                        </div>
+
+                        <!-- Article Categories -->
+                        <div class="CategoriesSection">
+                            <h3>Articles</h3>
+                            <div class="Types">
+                                <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
+                                <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
+                                <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
+                                <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
+                                <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+            <div class="CategoriesContainer">
+                <!-- Book Categories -->
+                <div class="CategoriesSection">
+                    <h3>Books</h3>
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
+                        <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
+                        <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
+                        <a href="categories.html" data-category="Children" data-type="Books">Children</a>
+                        <a href="categories.html" data-category="History" data-type="Books">History</a>
+                    </div>
+                </div>
+
+                <!-- Research Categories -->
+                <div class="CategoriesSection">
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
+                        <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
+                        <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
+                        <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
+                        <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                    </div>
+                </div>
+
+                <!-- Article Categories -->
+                <div class="CategoriesSection">
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
+                        <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
+                        <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
+                        <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
+                        <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ImageText">
+
+            <div id="Logo-Text">
+                <img src="~/Images/Logo.png">
+                <p>Connecting Readers with Knowledge</p>
+            </div>
+            <div class="scroll-down">
+                <i class="arrow"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <div class="aboutSection">
+            <h2>About BookCase</h2>
+            <p class="quote">"A library is not a luxury but one of the necessities of life." — Henry Ward Beecher</p>
+                
+            <div class="missionSection">
+                <div class="textContent">
+                    <h3>Our Mission</h3>
+                    <p>At BookCase, we believe in the transformative power of reading. Our mission is to make literature, research, and knowledge accessible to everyone, everywhere. We're not just a digital library; we're a community of passionate readers, learners, and thinkers.</p>
+                </div>
+                <div class="iconBox">
+                    <span class="material-symbols-outlined">auto_stories</span>
+                </div>
+            </div>
+
+            <div class="valuesSection">
+                <h3>What We Offer</h3>
+                <div class="valueCards">
+                    <div class="valueCard">
+                        <span class="material-symbols-outlined">menu_book</span>
+                        <h4>Vast Collection</h4>
+                        <p>Access thousands of books across all genres, from classics to contemporary bestsellers.</p>
+                    </div>
+                    <div class="valueCard">
+                        <span class="material-symbols-outlined">science</span>
+                        <h4>Research Papers</h4>
+                        <p>Explore cutting-edge research in AI, physics, medicine, and environmental science.</p>
+                    </div>
+                    <div class="valueCard">
+                        <span class="material-symbols-outlined">article</span>
+                        <h4>Insightful Articles</h4>
+                        <p>Stay informed with articles on technology, education, health, and culture.</p>
+                    </div>
+                    <div class="valueCard">
+                        <span class="material-symbols-outlined">favorite</span>
+                        <h4>Personal Library</h4>
+                        <p>Save your favorites and build your own curated collection.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="storySection">
+                <h3>Our Story</h3>
+                <div class="storyContent">
+                    <p>Founded by book lovers for book lovers, BookCase started with a simple idea: to create a space where knowledge flows freely and reading becomes a journey of discovery. We've grown from a small collection to a comprehensive digital library, but our core values remain unchanged.</p>
+                    <p>We're committed to supporting readers at every stage of their journey, whether you're a student researching for a thesis, a professional seeking industry insights, or simply someone who loves getting lost in a good story.</p>
+                </div>
+            </div>
+
+            <div class="teamSection">
+                <h3>Join Our Community</h3>
+                <p>Become part of a global community of readers and learners. Share your thoughts, discover new perspectives, and let books transform your world.</p>
+                <div class="ctaButtons">
+                    <a asp-action="signup" asp-controller="Home" class="primaryButton">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="Footer">
+        <img src=~/Images/Logo.png" alt="Company Logo" />
+
+        <div class="Links">
+
+            <section>
+                <h2>Contact Us</h2>
+                <address>
+                    123 Main Street, City, Country<br />
+                    Phone: <a href="tel:+1234567890">+1 234 567 890</a><br />
+                    Email: <a href="mailto:info@company.com">info@company.com</a>
+                </address>
+            </section>
+
+            <section>
+                <h2>Follow Us</h2>
+                <div class="SocialMedia">
+                    <a href="#" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </footer>
+</div>
+
+<script src="~/js/about.js"></script>
+<script src="~/js/auth-check.js"></script>
+
+

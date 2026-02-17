@@ -1,0 +1,221 @@
+@{
+ViewData["Title"] = "Favorite";
+Layout = "_Layout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/favourite.css">
+</head>
+
+<div id="successMessage" class="success-message">Login successfully!</div>
+    
+<div class="Container">
+    <div class="mainSection">
+        <div class="navbar">
+            <div class="NavElements">
+                <a id="Logo" asp-action="index" asp-controller="Home"><img src="~/Images/Logo.png"></a>
+                <section class="NavPages">
+                    <a id="NavLink1" asp-action="index" asp-controller="Home">Home</a>
+                    <a id="NavLink2" asp-action="categories" asp-controller="Home">Categories</a>
+                    <a id="NavLink3" asp-action="favourite" asp-controller="Home">Favourite</a>
+                    <a id="NavLink4" asp-action="about" asp-controller="Home">About Us</a>
+                </section>
+                <section class="Register">
+                    <a asp-action="login" asp-controller="Home" id="Login">Log in</a>
+                    <a asp-action="signup" asp-controller="Home" id="Signup">Signup</a>
+                </section>
+                <!-- Add user profile section when logged in -->
+                <section class="UserProfile" style="display: none;">
+                    <span class="material-symbols-outlined" id="userIcon">account_circle</span>
+                    <span id="username"></span>
+                    <button id="logoutBtn">Logout</button>
+                </section>
+                <p id="DropButton"><span class="material-symbols-outlined">menu</span></p>
+                <section class="DropList">
+                    <img src="~/Images/Logo.png">
+                    <ul id="List">
+                        <li class="options UserProfileDrop" style="display: none; cursor: pointer;">
+                            <span class="material-symbols-outlined">account_circle</span>
+                            <span id="dropUsername" style="margin-right: auto; padding-left: 8px;"></span>
+                            <span class="material-symbols-outlined" id="dropLogoutIcon" style="margin-left: auto;">logout</span>
+                        </li>
+                        <li class="options"><span class="material-symbols-outlined">home</span><a asp-action="index" asp-controller="Home">Home</a></li>
+                        <li class="options"><span class="material-symbols-outlined">category</span><a asp-action="categories" asp-controller="Home">Categories</a></li>
+                        <li class="options"><span class="material-symbols-outlined">favorite</span><a asp-action="favourite" asp-controller="Home">Favorite</a></li>
+                        <li class="options"><span class="material-symbols-outlined">info</span><a asp-action="about" asp-controller="Home">About Us</a></li>
+                        <li class="options"><span class="material-symbols-outlined">login</span><a asp-action="login" asp-controller="Home">Login</a></li>
+                        <li class="options"><span class="material-symbols-outlined">add</span><a asp-action="signup" asp-controller="Home">Signup</a></li>
+                    </ul>
+                    <section class="DropCategoriesContainer" style="display: none; padding: 10px 20px; background: #000;">
+                        <!-- Book Categories -->
+                        <div class="CategoriesSection">
+                            <h3>Books</h3>
+                            <div class="Types">
+                                <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
+                                <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
+                                <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
+                                <a href="categories.html" data-category="Children" data-type="Books">Children</a>
+                                <a href="categories.html" data-category="History" data-type="Books">History</a>
+                            </div>
+                        </div>
+
+                        <!-- Research Categories -->
+                        <div class="CategoriesSection">
+                            <h3>Researches</h3>
+                            <div class="Types">
+                                <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
+                                <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
+                                <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
+                                <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
+                                <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                            </div>
+                        </div>
+
+                        <!-- Article Categories -->
+                        <div class="CategoriesSection">
+                            <h3>Articles</h3>
+                            <div class="Types">
+                                <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
+                                <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
+                                <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
+                                <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
+                                <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+            <div class="CategoriesContainer">
+                <!-- Book Categories -->
+                <div class="CategoriesSection">
+                    <h3>Books</h3>
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
+                        <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
+                        <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
+                        <a href="categories.html" data-category="Children" data-type="Books">Children</a>
+                        <a href="categories.html" data-category="History" data-type="Books">History</a>
+                    </div>
+                </div>
+
+                <!-- Research Categories -->
+                <div class="CategoriesSection">
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
+                        <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
+                        <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
+                        <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
+                        <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                    </div>
+                </div>
+
+                <!-- Article Categories -->
+                <div class="CategoriesSection">
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
+                        <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
+                        <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
+                        <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
+                        <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ImageText">
+            <div id="Logo-Text">
+                <img src="~/Images/Logo.png">
+                <p>Your Personal Library</p>
+            </div>
+            <div class="scroll-down">
+                <i class="arrow"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <div class="favouriteHeader">
+            <h2>My Favourite Books</h2>
+            <p class="quote">"Books are a uniquely portable magic." — Stephen King</p>
+        </div>
+
+        <div id="notLoggedIn" class="emptyState">
+            <span class="material-symbols-outlined">login</span>
+            <h3>Please Login</h3>
+            <p>You need to be logged in to view your favourite books</p>
+            <a href="login.html" class="loginButton">Login Now</a>
+        </div>
+
+        <div id="emptyFavourites" class="emptyState" style="display: none;">
+            <span class="material-symbols-outlined">favorite_border</span>
+            <h3>No Favourites Yet</h3>
+            <p>Start adding books to your favourites to see them here</p>
+            <a href="index.html" class="exploreButton">Explore Books</a>
+        </div>
+
+        <div id="favouriteBooks" class="BooksContainer" style="display: none;">
+            <div class="book-collections" id="favouriteList">
+                <!-- Favourite books will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add preview popup modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <img id="modalBookImage" src="/placeholder.jpg" alt="Book Cover">
+                <div class="modal-details">
+                    <h2 id="modalBookTitle"></h2>
+                    <p class="modal-author" id="modalBookAuthor"></p>
+                    <p class="modal-tags" id="modalBookTags"></p>
+                    <p class="modal-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="modal-buttons">
+                        <button class="btn-display">Display</button>
+                        <button class="btn-download">Download</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="Footer">
+        <img src=~/Images/Logo.png" alt="Company Logo" />
+
+        <div class="Links">
+
+            <section>
+                <h2>Contact Us</h2>
+                <address>
+                    123 Main Street, City, Country<br />
+                    Phone: <a href="tel:+1234567890">+1 234 567 890</a><br />
+                    Email: <a href="mailto:info@company.com">info@company.com</a>
+                </address>
+            </section>
+
+            <section>
+                <h2>Follow Us</h2>
+                <div class="SocialMedia">
+                    <a href="#" class="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </footer>
+</div>
+
+<script src="~/js/auth-check.js"></script>
+<script src="~/js/homePage.js"></script>
+<script src="~/js/database.js"></script>
+<script src="~/js/favourite.js"></script>
+<script src="~/js/book-features.js"></script>

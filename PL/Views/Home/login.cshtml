@@ -1,0 +1,60 @@
+@{
+ViewData["Title"] = "Login";
+Layout = "_Layout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/auth.css">
+</head>
+
+<div class="Container">
+    <div class="mainSection">
+        <div class="navbar">
+            <div class="NavElements">
+                <a id="Logo" asp-action="index" asp-controller="Home"><img src="~/Images/Logo.png"></a>
+                <section class="Register">
+                    <a asp-action="login" asp-controller="Home" id="Login">Log in</a>
+                    <a asp-action="signup" asp-controller="Home" id="Signup">Signup</a>
+                </section>
+            </div>
+        </div>
+
+        <div class="authContainer">
+            <div class="authBox">
+                <h1>Welcome Back</h1>
+                <p class="subtitle">Login to access your favorite books</p>
+                    
+                <form id="loginForm">
+                    <div class="inputGroup">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                        
+                    <div class="inputGroup">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                        
+                    <div class="rememberForgot">
+                        <label class="checkbox">
+                            <input type="checkbox" id="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgotPassword">Forgot Password?</a>
+                    </div>
+                        
+                    <p id="loginError" class="errorMessage" style="display: none;">
+                    Invalid email or password
+                    </p>
+
+                    <button type="submit" class="authButton">Login</button>
+                        
+                    <p class="switchAuth">
+                        Don't have an account? <a href="signup.html">Sign up here</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="~/js/auth.js"></script>

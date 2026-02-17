@@ -1,0 +1,316 @@
+@{
+    ViewData["Title"] = "Categories";
+    Layout = "_Layout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/categories.css">
+</head>
+
+<!-- Add success message notification -->
+<div id="successMessage" class="success-message">Login successfully!</div>
+    
+<div class="Container">
+    <div class="mainSection">
+        <div class="navbar">
+            <div class="NavElements">
+                <a id="Logo" asp-action="index" asp-controller="Home"><img src="~/Images/Logo.png"></a>
+                <section class="NavPages">
+                    <a id="NavLink1" asp-action="index" asp-controller="Home">Home</a>
+                    <a id="NavLink2" asp-action="categories" asp-controller="Home">Categories</a>
+                    <a id="NavLink3" asp-action="favourite" asp-controller="Home">Favourite</a>
+                    <a id="NavLink4" asp-action="about" asp-controller="Home">About Us</a>
+                </section>
+                <section class="Register">
+                    <a asp-action="login" asp-controller="Home" id="Login">Log in</a>
+                    <a asp-action="signup" asp-controller="Home" id="Signup">Signup</a>
+                </section>
+                <!-- Add user profile section when logged in -->
+                <section class="UserProfile" style="display: none;">
+                    <span class="material-symbols-outlined" id="userIcon">account_circle</span>
+                    <span id="username"></span>
+                    <button id="logoutBtn">Logout</button>
+                </section>
+                <p id="DropButton"><span class="material-symbols-outlined">menu</span></p>
+                <section class="DropList">
+                    <img src="~/Images/Logo.png">
+                    <ul id="List">
+                        <li class="options UserProfileDrop" style="display: none; cursor: pointer;">
+                            <span class="material-symbols-outlined">account_circle</span>
+                            <span id="dropUsername" style="margin-right: auto; padding-left: 8px;"></span>
+                            <span class="material-symbols-outlined" id="dropLogoutIcon" style="margin-left: auto;">logout</span>
+                        </li>
+                        <li class="options"><span class="material-symbols-outlined">home</span><a asp-action="index" asp-controller="Home">Home</a></li>
+                        <li class="options"><span class="material-symbols-outlined">category</span><a asp-action="categories" asp-controller="Home">Categories</a></li>
+                        <li class="options"><span class="material-symbols-outlined">favorite</span><a asp-action="favourite" asp-controller="Home">Favorite</a></li>
+                        <li class="options"><span class="material-symbols-outlined">info</span><a asp-action="about" asp-controller="Home">About Us</a></li>
+                        <li class="options"><span class="material-symbols-outlined">login</span><a asp-action="login" asp-controller="Home">Login</a></li>
+                        <li class="options"><span class="material-symbols-outlined">add</span><a asp-action="signup" asp-controller="Home">Signup</a></li>
+                    </ul>
+                    <section class="DropCategoriesContainer" style="display: none; padding: 10px 20px; background: #000;">
+                        <!-- Book Categories -->
+                        <div class="CategoriesSection">
+                            <h3>Books</h3>
+                            <div class="Types">
+                                <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
+                                <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
+                                <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
+                                <a href="categories.html" data-category="Children" data-type="Books">Children</a>
+                                <a href="categories.html" data-category="History" data-type="Books">History</a>
+                            </div>
+                        </div>
+
+                        <!-- Research Categories -->
+                        <div class="CategoriesSection">
+                            <h3>Researches</h3>
+                            <div class="Types">
+                                <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
+                                <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
+                                <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
+                                <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
+                                <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                            </div>
+                        </div>
+
+                        <!-- Article Categories -->
+                        <div class="CategoriesSection">
+                            <h3>Articles</h3>
+                            <div class="Types">
+                                <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
+                                <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
+                                <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
+                                <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
+                                <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </div>
+            <div class="CategoriesContainer">
+                <!-- Book Categories -->
+                <div class="CategoriesSection">
+                    <h3>Books</h3>
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
+                        <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
+                        <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
+                        <a href="categories.html" data-category="Children" data-type="Books">Children</a>
+                        <a href="categories.html" data-category="History" data-type="Books">History</a>
+                    </div>
+                </div>
+
+                <!-- Research Categories -->
+                <div class="CategoriesSection">
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
+                        <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
+                        <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
+                        <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
+                        <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                    </div>
+                </div>
+
+                <!-- Article Categories -->
+                <div class="CategoriesSection">
+                    <p></p>
+                    <div class="Types">
+                        <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
+                        <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
+                        <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
+                        <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
+                        <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ImageText">
+            <div id="Logo-Text">
+                <img src="~/Images/Logo.png">
+                <p >More Than Books, It's a Journey</p>
+            </div>
+        <div class="scroll-down">
+            <i class="arrow"></i>
+        </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+            
+            <!-- Display Selected Category -->
+        <div class="CategoryDetails">
+            <h2 id="category-title"></h2>
+            <p id="category-content"></p>
+        </div>
+
+        <div class="SearchContainer">
+            <input type="search" placeholder="Search" id="searchbar">
+            <button type="submit" ><span class="material-symbols-outlined">Search</span></button>
+        </div>
+
+    <div class="BooksContainer">
+        <div class="book-collections">
+                
+            <div class="book-card">
+                <!-- Add preview and favorite icons overlay -->
+                <div class="book-actions">
+                    <span class="material-symbols-outlined preview-icon" data-book-id="1">visibility</span>
+                    <span class="material-symbols-outlined favorite-icon" data-book-id="1">favorite_border</span>
+                </div>
+                <img src="assets/IMG/Miniature Book Cover Template.jpg" alt="The Uses of Libraries Book Cover">
+                    <p>The uses of Libraries. Please read me</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+                    
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="2">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="2">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Library Book Cover">
+                    <p>The uses of Libraries. Please read me</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+                    
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="3">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="3">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Thriller Novel Kindle Book Cover Template.jpg" alt="Books Stack Cover">
+                    <p>The uses of Libraries. Please read me</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="4">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="4">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Miniature Book Cover Template.jpg" alt="The Library Book Cover">
+                    <p>The uses of Libraries. Please read me</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+                    
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="5">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="5">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Thriller Novel Kindle Book Cover Template.jpg" alt="Book Cover">
+                    <p>Book Title</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="6">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="6">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Novel Book Cover">
+                    <p>Book Title</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="7">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="7">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Miniature Book Cover Template.jpg" alt="Book Cover">
+                    <p>Book Title</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="8">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="8">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Novel Book Cover Template.jpg" alt="Book Cover">
+                    <p>Book Title</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+                    
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="9">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="9">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Book Cover">
+                    <p>Book Title</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="10">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="10">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Book Cover">
+                    <p>Book Title</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+                    
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="11">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="11">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Children_27s Book Cover Template.jpg" alt="Book Cover">
+                    <p>Book Title</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+                    
+                <div class="book-card">
+                    <div class="book-actions">
+                        <span class="material-symbols-outlined preview-icon" data-book-id="12">visibility</span>
+                        <span class="material-symbols-outlined favorite-icon" data-book-id="12">favorite_border</span>
+                    </div>
+                    <img src="assets/IMG/Thriller Novel Kindle Book Cover Template.jpg" alt="Book Cover">
+                    <p>Book Title</p>
+                    <p class="tags" id="Tags">Genre, Bestseller</p>
+                    <p class="author">Ahmed Mohamed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+<!-- Add preview popup modal -->
+<div id="previewModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+            <img id="modalBookImage" src="/placeholder.svg" alt="Book Cover">
+            <div class="modal-details">
+                <h2 id="modalBookTitle"></h2>
+                <p class="modal-author" id="modalBookAuthor"></p>
+                <p class="modal-tags" id="modalBookTags"></p>
+                <p class="modal-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="modal-buttons">
+                    <button class="btn-display">Display</button>
+                    <button class="btn-download">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="~/js/homePage.js"></script> 
+<script src="~/js/book-features.js"></script>
+<script src="~/js/categories.js"></script>
+<script src="~/js/auth-check.js"></script>
