@@ -7,13 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\Admin.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Admin\Admin.cshtml" />
   </ItemGroup>
 
 </Project>

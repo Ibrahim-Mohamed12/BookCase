@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+Eha4e+Eyqs=",
+  "dgSpecHash": "k+M0eN0GdUU=",
   "success": true,
-  "projectFilePath": "D:\\Visual Studio Projects\\BookCaseEF\\BookCaseEF.csproj",
+  "projectFilePath": "D:\\Visual Studio Projects\\BookCaseEF\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Domain\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Domain\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

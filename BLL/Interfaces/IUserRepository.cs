@@ -10,5 +10,7 @@ namespace BLL.Interfaces
     public interface IUserRepository : IGenericRepository<User>
     {
         public User GetUserFavListBooks(string id);
+
+        public User GetByEmail(string email);
     }
 }

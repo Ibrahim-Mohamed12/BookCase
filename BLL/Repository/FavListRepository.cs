@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BLL.Repository
 {
-    internal class FavListRepository : IGenericRepository<FavList>
+    public class FavListRepository : IGenericRepository<FavList>
     {
         private readonly BookCaseDBContext _context;
 

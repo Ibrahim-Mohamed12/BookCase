@@ -22,16 +22,24 @@ Layout = "_Layout";
                     <a id="NavLink3" asp-action="favourite" asp-controller="Home" >Favourite</a>
                     <a id="NavLink4" asp-action="about" asp-controller="Home" >About Us</a>
                 </section>
-                <section class="Register">
-                    <a asp-action="login" asp-controller="Home" id="Login">Log in</a>
-                    <a asp-action="signup" asp-controller="Home" id="Signup">Signup</a>
-                </section>
+                @if (ViewBag.UserName == "user")
+                {   
+                    <section class="Register">
+                        <a asp-action="login" asp-controller="Home" id="Login">Log in</a>
+                        <a asp-action="signup" asp-controller="Home" id="Signup">Signup</a>
+                    </section>
+                }
+
                 <!-- Add user profile section when logged in -->
-                <section class="UserProfile" style="display: none;">
-                    <span class="material-symbols-outlined" id="userIcon">account_circle</span>
-                    <span id="username"></span>
-                    <button id="logoutBtn">Logout</button>
-                </section>
+                @if (ViewBag.UserName != "user")
+                {
+                    <section class="UserProfile">
+                        <span class="material-symbols-outlined" id="userIcon">account_circle</span>
+                        <span id="username">@ViewBag.UserName</span>
+                        <a id="logoutBtn" asp-action="logOut" asp-controller="Home">Logout</a>
+                    </section>
+                }
+                
                 <p id="DropButton"><span class="material-symbols-outlined">menu</span></p>
                 <section class="DropList">
                     <img src="~/Images/Logo.png">
@@ -45,8 +53,11 @@ Layout = "_Layout";
                         <li class="options"><span class="material-symbols-outlined">category</span><a asp-action="categories" asp-controller="Home">Categories</a></li>
                         <li class="options"><span class="material-symbols-outlined">favorite</span><a asp-action="favourite" asp-controller="Home">Favorite</a></li>
                         <li class="options"><span class="material-symbols-outlined">info</span><a asp-action="about" asp-controller="Home">About Us</a></li>
-                        <li class="options"><span class="material-symbols-outlined">login</span><a asp-action="login" asp-controller="Home">Login</a></li>
-                        <li class="options"><span class="material-symbols-outlined">add</span><a asp-action="signup" asp-controller="Home">Signup</a></li>
+                        @if (ViewBag.UserName == "user")
+                        {
+                            <li class="options"><span class="material-symbols-outlined">login</span><a asp-action="login" asp-controller="Home">Login</a></li>
+                            <li class="options"><span class="material-symbols-outlined">add</span><a asp-action="signup" asp-controller="Home">Signup</a></li>
+                        }
                     </ul>
                     <section class="DropCategoriesContainer" style="display: none; padding: 10px 20px; background: #000;">
                         <!-- Book Categories -->
@@ -495,5 +506,4 @@ Layout = "_Layout";
 </footer>
 
 <script src="~/js/homePage.js"></script>
-<script src="~/js/auth-check.js"></script>
 <script src="~/js/book-features.js"></script>

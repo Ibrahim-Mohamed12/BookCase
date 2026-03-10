@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BookCaseEF.Data.Configurations
 {
-    internal class BookConfig : IEntityTypeConfiguration<Book>
+    public class BookConfig : IEntityTypeConfiguration<Book>
     {
-        public void Configure (EntityTypeBuilder<Book> builder)
+        public void Configure(EntityTypeBuilder<Book> builder)
         {
             builder.HasKey(b => b.BookID);
             builder.Property(b => b.Title)

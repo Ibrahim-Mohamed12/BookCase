@@ -1,19 +1,132 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Visual Studio Projects\\BookCaseEF\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1AB6A24B-1123-4FD8-96BE-9A27055B902A}|..\\PL\\PL.csproj|d:\\visual studio projects\\pl\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AB6A24B-1123-4FD8-96BE-9A27055B902A}|..\\PL\\PL.csproj|d:\\visual studio projects\\pl\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AB6A24B-1123-4FD8-96BE-9A27055B902A}|..\\PL\\PL.csproj|d:\\visual studio projects\\pl\\views\\home\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AB6A24B-1123-4FD8-96BE-9A27055B902A}|..\\PL\\PL.csproj|d:\\visual studio projects\\pl\\viewmodels\\loginuserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AB6A24B-1123-4FD8-96BE-9A27055B902A}|..\\PL\\PL.csproj|d:\\visual studio projects\\pl\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AB6A24B-1123-4FD8-96BE-9A27055B902A}|..\\PL\\PL.csproj|d:\\visual studio projects\\pl\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AB6A24B-1123-4FD8-96BE-9A27055B902A}|..\\PL\\PL.csproj|d:\\visual studio projects\\pl\\viewmodels\\signupuserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 115,
+      "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio Projects\\PL\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "..\\PL\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Visual Studio Projects\\PL\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "..\\PL\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-10T23:04:10.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio Projects\\PL\\Views\\Home\\index.cshtml",
+              "RelativeDocumentMoniker": "..\\PL\\Views\\Home\\index.cshtml",
+              "ToolTip": "D:\\Visual Studio Projects\\PL\\Views\\Home\\index.cshtml*",
+              "RelativeToolTip": "..\\PL\\Views\\Home\\index.cshtml*",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-10T22:47:39.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginUserViewModel.cs",
+              "DocumentMoniker": "D:\\Visual Studio Projects\\PL\\ViewModels\\LoginUserViewModel.cs",
+              "RelativeDocumentMoniker": "..\\PL\\ViewModels\\LoginUserViewModel.cs",
+              "ToolTip": "D:\\Visual Studio Projects\\PL\\ViewModels\\LoginUserViewModel.cs",
+              "RelativeToolTip": "..\\PL\\ViewModels\\LoginUserViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T22:48:40.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "login.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio Projects\\PL\\Views\\Home\\login.cshtml",
+              "RelativeDocumentMoniker": "..\\PL\\Views\\Home\\login.cshtml",
+              "ToolTip": "D:\\Visual Studio Projects\\PL\\Views\\Home\\login.cshtml",
+              "RelativeToolTip": "..\\PL\\Views\\Home\\login.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-10T22:43:52.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Visual Studio Projects\\PL\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "..\\PL\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Visual Studio Projects\\PL\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "..\\PL\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAArwEoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T21:36:25.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SignUpUserViewModel.cs",
+              "DocumentMoniker": "D:\\Visual Studio Projects\\PL\\ViewModels\\SignUpUserViewModel.cs",
+              "RelativeDocumentMoniker": "..\\PL\\ViewModels\\SignUpUserViewModel.cs",
+              "ToolTip": "D:\\Visual Studio Projects\\PL\\ViewModels\\SignUpUserViewModel.cs",
+              "RelativeToolTip": "..\\PL\\ViewModels\\SignUpUserViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T15:02:22.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "signup.cshtml",
+              "DocumentMoniker": "D:\\Visual Studio Projects\\PL\\Views\\Home\\signup.cshtml",
+              "RelativeDocumentMoniker": "..\\PL\\Views\\Home\\signup.cshtml",
+              "ToolTip": "D:\\Visual Studio Projects\\PL\\Views\\Home\\signup.cshtml",
+              "RelativeToolTip": "..\\PL\\Views\\Home\\signup.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-10T14:58:53.576Z",
+              "EditorCaption": ""
             }
           ]
         }

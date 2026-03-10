@@ -48,6 +48,14 @@ namespace BLL.Repository
             return user;
         }
 
+        public User GetByEmail(string Email)
+        {
+            User user = _context.User
+                .AsNoTracking()
+                .FirstOrDefault(u => u.Email == Email);
+
+            return user;
+        }
         public User GetUserFavListBooks(string id)
         {
             User user = _context.User

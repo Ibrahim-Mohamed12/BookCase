@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookCaseEF.Entities
 {
-    internal class FavList
+    public class FavList
     {
         public string FavID { get; set; }
 

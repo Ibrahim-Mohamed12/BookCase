@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookCaseEF.Entities
 {
-    internal class Book
+    public class Book
     {
 
         public string BookID { get; set; }

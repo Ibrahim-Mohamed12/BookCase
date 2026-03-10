@@ -4717,9 +4717,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio Projects\\BookCaseEF\\BookCaseEF.csproj",
-      "projectName": "BookCaseEF",
-      "projectPath": "D:\\Visual Studio Projects\\BookCaseEF\\BookCaseEF.csproj",
+      "projectUniqueName": "D:\\Visual Studio Projects\\BookCaseEF\\DAL.csproj",
+      "projectName": "DAL",
+      "projectPath": "D:\\Visual Studio Projects\\BookCaseEF\\DAL.csproj",
       "packagesPath": "C:\\Users\\Domain\\.nuget\\packages\\",
       "outputPath": "D:\\Visual Studio Projects\\BookCaseEF\\obj\\",
       "projectStyle": "PackageReference",
