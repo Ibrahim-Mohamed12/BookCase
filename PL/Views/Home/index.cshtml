@@ -8,9 +8,6 @@ Layout = "_Layout";
 <link rel="stylesheet" href="~/css/homePage.css">
 </head>
 
-<!-- Add success message notification -->
-<div id="successMessage" class="success-message">Login successfully!</div>
-
 <div class="container">
     <div class="mainSection">
         <div class="navbar">
@@ -58,6 +55,11 @@ Layout = "_Layout";
                             <li class="options"><span class="material-symbols-outlined">login</span><a asp-action="login" asp-controller="Home">Login</a></li>
                             <li class="options"><span class="material-symbols-outlined">add</span><a asp-action="signup" asp-controller="Home">Signup</a></li>
                         }
+                        @if (ViewBag.UserName != "user")
+                        {
+                            <a id="logoutBtn" asp-action="logOut" asp-controller="Home">Logout</a>
+                        }
+
                     </ul>
                     <section class="DropCategoriesContainer" style="display: none; padding: 10px 20px; background: #000;">
                         <!-- Book Categories -->

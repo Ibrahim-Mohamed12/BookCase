@@ -12,5 +12,7 @@ namespace BLL.Interfaces
         public User GetUserFavListBooks(string id);
 
         public User GetByEmail(string email);
+
+        public int GetNOfUsers();
     }
 }

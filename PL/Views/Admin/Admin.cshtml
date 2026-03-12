@@ -1,102 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿@{
+    ViewData["Title"] = "Admin Dashboard - BookCase";
+    Layout = "_Layout";
+}
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookCase | Admin Dashboard</title>
-    <link rel="stylesheet" href="Assets/CSS/homePage.css"> <link rel="stylesheet" href="Assets/CSS/admin.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="~/css/homePage.css"> <link rel="stylesheet">
 </head>
-<body>
-    <div class="admin-container">
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <img src="assets/IMG/Logo.png" alt="BookCase Logo">
+
+<div class="admin-container">
+
+    <!-- Mobile Topbar -->
+    <div class="top-navbar">
+        <div class="logo">
+            <img src="~/Images/Logo.png" class="logo-img">
+            <span>Admin Dashboard</span>
+        </div>
+        <span id="menuBtn" class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-overlay" id="sidebarOverlay">
+        <div class="sidebar-logo">
+            <img src="~/Images/Logo.png">
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#overview" class="active">
+                <span class="material-symbols-outlined">dashboard</span> Overview
+            </a>
+
+            <a href="#users">
+                <span class="material-symbols-outlined">group</span> Manage Users
+            </a>
+
+            <a href="#books">
+                <span class="material-symbols-outlined">library_books</span> Manage Books
+            </a>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <a asp-action="Addbooks" asp-controller="Admin" class="btn-add">
+                <span class="material-symbols-outlined">add</span>Add New Book
+            </a>
+        </header>
+
+        <section class="stats-grid" id="overview">
+            <div class="stat-card">
+                <h3>Total Users</h3>
+                <p class="stat-number">@ViewBag.NOfUsers</p>
             </div>
-            <nav class="sidebar-nav">
-                <a href="#overview" class="active"><span class="material-symbols-outlined">dashboard</span> Overview</a>
-                <a href="#users"><span class="material-symbols-outlined">group</span> Manage Users</a>
-                <a href="#books"><span class="material-symbols-outlined">library_books</span> Manage Books</a>
-                <a href="homePage.html"><span class="material-symbols-outlined">home</span> View Site</a>
-            </nav>
-            <div class="admin-profile">
-                <span class="material-symbols-outlined">account_circle</span>
-                <p>Admin Mode</p>
+            <div class="stat-card">
+                <h3>Total Books</h3>
+                <p class="stat-number">@ViewBag.NOfBooks</p>
             </div>
-        </aside>
+            <div class="stat-card">
+                <h3>Popular Books</h3>
+                <p class="stat-number">@ViewBag.NOfFavBooks</p>
+            </div>
+        </section>
 
-        <main class="admin-main">
-            <header class="admin-header">
-                <h1>Admin Dashboard</h1>
-                <button class="btn-download" id="addBookBtn"><span class="material-symbols-outlined">add</span> Add New Book</button>
-            </header>
+        <section class="admin-section" id="users">
+            <div class="section-header">
+                <h2 style="color: white;">Registered Users</h2>
+            </div>
+            <div class="table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{var c = 1;}
 
-            <section class="stats-grid" id="overview">
-                <div class="stat-card">
-                    <h3>Total Users</h3>
-                    <p class="stat-number">1,240</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Total Books</h3>
-                    <p class="stat-number">458</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Downloads</h3>
-                    <p class="stat-number">8.2k</p>
-                </div>
-            </section>
-
-            <section class="admin-section" id="users">
-                <div class="section-header">
-                    <h2 style="color: white;">Registered Users</h2>
-                </div>
-                <div class="table-wrapper">
-                    <table class="admin-table">
-                        <thead>
+                        @foreach(var user in ViewBag.Users)
+                        {
                             <tr>
-                                <th>ID</th>
-                                <th>Username</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>#101</td>
-                                <td>Ahmed_Mohamed</td>
-                                <td>ahmed@example.com</td>
-                                <td>User</td>
+                                <td>#@c</td>
+                                <td>@user.Name</td>
+                                <td>@user.Email</td>
+                                <td>@(user.isAdmin ? "Admin" : "User")</td>
                                 <td>
                                     <button class="action-btn delete"><span class="material-symbols-outlined">delete</span></button>
                                 </td>
                             </tr>
-                            </tbody>
-                    </table>
-                </div>
-            </section>
+                            c++;
+                        }
+                        </tbody>
+                </table>
+            </div>
+        </section>
 
-            <section class="admin-section" id="books">
-                <div class="section-header">
-                    <h2 style="color: white;">Book Inventory</h2>
-                </div>
-                <div class="table-wrapper">
-                    <table class="admin-table">
-                        <thead>
+        <section class="admin-section" id="books">
+            <div class="section-header">
+                <h2 style="color: white;">Book Inventory</h2>
+            </div>
+            <div class="table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Cover</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var book in ViewBag.Books)
+                        {   
                             <tr>
-                                <th>Cover</th>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Category</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><img src="assets/IMG/Novel Book Cover Template.jpg" class="table-img"></td>
-                                <td>The Uses of Libraries</td>
-                                <td>Ahmed Mohamed</td>
-                                <td>Medical Studies</td>
+                                <td><img src="@Url.Content(book.ImageURL)" class="table-img"></td>
+                                <td>@book.Title</td>
+                                <td>@book.Author</td>
+                                <td>@book.Description</td>
                                 <td>
                                     <div class="action-group">
                                         <button class="action-btn edit"><span class="material-symbols-outlined">edit</span></button>
@@ -104,35 +128,12 @@
                                     </div>
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <div id="bookModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-body">
-                <div class="modal-details">
-                    <h2 id="modalTitle">Add New Book</h2>
-                    <form id="bookForm" class="admin-form">
-                        <input type="text" placeholder="Book Title" required>
-                        <input type="text" placeholder="Author Name" required>
-                        <select>
-                            <option value="">Select Category</option>
-                            <option value="Science Fiction">Science Fiction</option>
-                            <option value="Medical Studies">Medical Studies</option>
-                            <option value="History">History</option>
-                        </select>
-                        <textarea placeholder="Book Description" rows="4"></textarea>
-                        <input type="file" accept="image/*">
-                        <button type="submit" class="btn-download">Save Book</button>
-                    </form>
-                </div>
+                        }
+                    </tbody>
+                </table>
             </div>
-        </div>
-    </div>
-</body>
-</html>
+        </section>
+    </main>
+</div>
+
+<script src="~/js/Admin.js"></script>

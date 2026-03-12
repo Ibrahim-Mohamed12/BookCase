@@ -10,5 +10,7 @@ namespace BLL.Interfaces
     public interface IBookRepository : IGenericRepository<Book>
     {
         public IEnumerable<Book> GetBooksByCategoryID(string categoryId);
+
+        public int CountBooks();
     }
 }

@@ -61,5 +61,13 @@ namespace BLL.Repository
             return book;
         }
 
+        public int CountBooks()
+        {
+            List<Book> books = _context.Book
+                .AsNoTracking()
+                .ToList();
+            return books.Count;
+        }
+
     }
 }

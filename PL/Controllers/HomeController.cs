@@ -24,7 +24,6 @@ namespace PL.Controllers
 
             // Pass the name directly to ViewBag
             ViewBag.UserName = HttpContext.Session.GetString("UserName") ?? "user";
-
             return View();
         }
 
@@ -60,7 +59,7 @@ namespace PL.Controllers
                 HttpContext.Session.SetString("userId", user.UserID.ToString());
                 HttpContext.Session.SetString("UserName", user.Name);
 
-                return user.isAdmin ? RedirectToAction("admin", "Home") : RedirectToAction("index", "Home");
+                return user.isAdmin ? RedirectToAction("Admin", "Admin") : RedirectToAction("index", "Home");
             }
 
             ModelState.AddModelError("", "Invalid Email or Password");

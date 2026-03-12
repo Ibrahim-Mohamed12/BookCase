@@ -31,6 +31,12 @@ namespace BLL.Repository
             return _context.SaveChanges();
         }
 
+        public int Update(User entity)
+        {
+            _context.User.Update(entity);
+            return _context.SaveChanges();
+        }
+
         public IEnumerable<User> GetAll()
         {
             List<User> users = _context.User
@@ -66,10 +72,14 @@ namespace BLL.Repository
             return user;
         }
 
-        public int Update(User entity)
+        public int GetNOfUsers()
         {
-            _context.User.Update(entity);
-            return _context.SaveChanges();
+            List<User> users = _context.User
+               .AsNoTracking()
+               .ToList();
+            return users.Count;
         }
+
+
     }
 }

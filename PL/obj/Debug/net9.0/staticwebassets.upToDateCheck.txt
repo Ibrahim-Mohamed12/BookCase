@@ -59,6 +59,7 @@ D:\Visual Studio Projects\PL\wwwroot\lib\jquery\dist\jquery.slim.min.map
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\js\bootstrap.js
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+D:\Visual Studio Projects\PL\wwwroot\js\Admin.js
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -79,12 +80,14 @@ wwwroot\Images\Black_Logo.png
 wwwroot\Images\book-5472X3648-wallpaper-4ibfq0znewa7wgxb.jpeg
 wwwroot\Images\Children_27s Book Cover Template.jpg
 wwwroot\Images\Free Children_s Story Book Cover Template.jpg
+wwwroot\Images\IT.jpg
 wwwroot\Images\Logo.png
 wwwroot\Images\Magazine Book Cover Template.jpg
 wwwroot\Images\Miniature Book Cover Template.jpg
 wwwroot\Images\Novel Book Cover Template.jpg
 wwwroot\Images\Thriller Novel Kindle Book Cover Template.jpg
 wwwroot\js\about.js
+wwwroot\js\Admin.js
 wwwroot\js\book-features.js
 wwwroot\js\categories.js
 wwwroot\js\common.js

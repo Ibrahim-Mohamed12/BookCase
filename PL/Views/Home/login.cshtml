@@ -1,13 +1,14 @@
 @model LoginUserViewModel;
 
 @{
-ViewData["Title"] = "Login";
-Layout = "_Layout";
+    ViewData["Title"] = "Login";
+    Layout = "_Layout";
 }
 
 <head>
     <link rel="stylesheet" href="~/css/auth.css">
 </head>
+
 
 <div class="Container">
     <div class="mainSection">
@@ -25,7 +26,6 @@ Layout = "_Layout";
             <div class="authBox">
                 <h1>Welcome Back</h1>
                 <p class="subtitle">Login to access your favorite books</p>
-
 
                 <form id="loginForm" asp-action="login" asp-controller="Home" method="post">
 
@@ -50,3 +50,4 @@ Layout = "_Layout";
             </div>
         </div>
     </div>
+</div>

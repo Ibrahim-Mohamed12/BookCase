@@ -25,7 +25,7 @@ namespace PL
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IBookRepository, BookRepository>();
             builder.Services.AddScoped<IGenericRepository<Category>, CategoryRepository>();
-            builder.Services.AddScoped<IGenericRepository<FavList>, FavListRepository>();
+            builder.Services.AddScoped<IFavListRepository, FavListRepository>();
 
             var app = builder.Build();
 
@@ -33,6 +33,8 @@ namespace PL
             app.UseRouting();
             app.UseStaticFiles();
             app.UseSession();
+            app.UseAuthorization();
+
 
             app.MapControllerRoute(
                 name: "default",
