@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BookCaseEF.Data.Migrations
+namespace DAL.Data.Migrations
 {
     [DbContext(typeof(BookCaseDBContext))]
     partial class BookCaseDBContextModelSnapshot : ModelSnapshot
@@ -36,6 +36,11 @@ namespace BookCaseEF.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Filepath")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
@@ -74,7 +79,7 @@ namespace BookCaseEF.Data.Migrations
 
                     b.HasKey("CategoryID");
 
-                    b.ToTable("Category");
+                    b.ToTable("category");
                 });
 
             modelBuilder.Entity("BookCaseEF.Entities.FavList", b =>

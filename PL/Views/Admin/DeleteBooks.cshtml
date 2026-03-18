@@ -1,0 +1,102 @@
+﻿@model DeleteBookViewModel;
+
+@* @{
+    ViewData["Title"] = "Admin Dashboard - BookCase";
+} *@
+
+<head>
+    <link rel="stylesheet" href="~/css/homePage.css">
+    <link rel="stylesheet">
+</head>
+
+<div class="admin-container">
+
+    <!-- Mobile Topbar -->
+    <div class="top-navbar">
+        <div class="logo">
+            <img src="~/Images/Logo.png" class="logo-img">
+            <span>Admin Dashboard</span>
+        </div>
+        <span id="menuBtn" class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-overlay" id="sidebarOverlay">
+        <div class="sidebar-logo">
+            <img src="~/Images/Logo.png">
+        </div>
+
+        <nav class="sidebar-nav">
+            <a asp-action="Admin" asp-controller="Admin">
+                <span class="material-symbols-outlined">dashboard</span> Overview
+            </a>
+
+            <a asp-action="manageUsers" asp-controller="Admin">
+                <span class="material-symbols-outlined">group</span> Manage Users
+            </a>
+
+            <a asp-action="manageBooks" asp-controller="Admin">
+                <span class="material-symbols-outlined">library_books</span> Manage Books
+            </a>
+        </nav>
+    </aside>
+
+    <div class="authContainer">
+        <div class="authBox">
+            <h1>Add new Book</h1>
+
+            <form id="signupForm" asp-action="DeleteBooks" asp-controller="Admin" method="post" enctype="multipart/form-data">
+
+                <div asp-validation-summary="All" style="color: red; background-color: white;"></div>
+
+                <input type="hidden" asp-for="BookID" value="@Model.BookID" />
+
+                <div class="inputGroup">
+                    <label for="Title">Book Title</label>
+                    <input readonly asp-for="Title" value="@Model.Title" type="text" id="Title" placeholder="Enter Book Title">
+                </div>
+
+                <div class="inputGroup">
+                    <label for="Description">Book Description</label>
+                    <textarea readonly asp-for="Description" value="@Model.Description" id="Description" placeholder="Enter Book Description"></textarea>
+                </div>
+
+                <div class="inputGroup">
+                    <label for="Author">Author Name</label>
+                    <input readonly asp-for="Author" value="@Model.Author" type="text" id="Author" placeholder="Enter Author name">
+                </div>
+
+                <div class="inputGroup">
+                    <label for="imageUrl">Image</label>
+                    <input readonly type="text" asp-for="ImageURL" value="@Model.ImageURL" id="imageUrl" placeholder="Image url">
+                </div>
+
+                <input asp-for="Filepath" type="hidden" value="@Model.Filepath" />
+
+
+
+                <div class="inputGroup">
+
+                    <select asp-for="CategoryID">
+
+                        @foreach (var c in ViewBag.CategoryList)
+                        {
+                            if (c.CategoryID == Model.CategoryID)
+                            {
+                                <option  value="@c.CategoryID">@c.CategoryName</option>
+
+                            }
+                        }
+
+                    </select>
+                </div>
+
+                <button class="authButton1" type="submit">Delete</button>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/js/Admin.js"></script>

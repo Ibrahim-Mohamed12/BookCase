@@ -29,11 +29,11 @@
                 <span class="material-symbols-outlined">dashboard</span> Overview
             </a>
 
-            <a href="#users">
+            <a asp-action="manageUsers" asp-controller="Admin">
                 <span class="material-symbols-outlined">group</span> Manage Users
             </a>
 
-            <a href="#books">
+            <a asp-action="manageBooks" asp-controller="Admin">
                 <span class="material-symbols-outlined">library_books</span> Manage Books
             </a>
         </nav>
@@ -82,16 +82,19 @@
 
                         @foreach(var user in ViewBag.Users)
                         {
-                            <tr>
-                                <td>#@c</td>
-                                <td>@user.Name</td>
-                                <td>@user.Email</td>
-                                <td>@(user.isAdmin ? "Admin" : "User")</td>
-                                <td>
-                                    <button class="action-btn delete"><span class="material-symbols-outlined">delete</span></button>
-                                </td>
-                            </tr>
-                            c++;
+                            if (!user.isAdmin)
+                            {
+                                <tr>
+                                    <td>#@c</td>
+                                    <td>@user.Name</td>
+                                    <td>@user.Email</td>
+                                    <td>User</td>
+                                    <td>
+                                        <a asp-action="DeleteUser" asp-controller="Admin" asp-route-id=@user.UserID class ="action-btn delete"><span class="material-symbols-outlined">delete</span></a>
+                                    </td>
+                                </tr>
+                                c++;
+                            }
                         }
                         </tbody>
                 </table>
@@ -117,14 +120,14 @@
                         @foreach(var book in ViewBag.Books)
                         {   
                             <tr>
-                                <td><img src="@Url.Content(book.ImageURL)" class="table-img"></td>
+                                <td><img src="@book.ImageURL" class="table-img"></td>
                                 <td>@book.Title</td>
                                 <td>@book.Author</td>
                                 <td>@book.Description</td>
                                 <td>
                                     <div class="action-group">
-                                        <button class="action-btn edit"><span class="material-symbols-outlined">edit</span></button>
-                                        <button class="action-btn delete"><span class="material-symbols-outlined">delete</span></button>
+                                        <a asp-action="UpdateBooks" asp-controller="Admin" asp-route-id=@book.BookID class="action-btn edit"><span class="material-symbols-outlined">edit</span></a>
+                                        <a asp-action="DeleteBooks" asp-controller="Admin" asp-route-id=@book.BookID  class="action-btn delete"><span class="material-symbols-outlined">delete</span></a>
                                     </div>
                                 </td>
                             </tr>

@@ -19,6 +19,8 @@ namespace BookCaseEF.Entities
 
         public string ImageURL { get; set; }
 
+        public string Filepath { get; set; }
+
 
         // Relations
 

@@ -1,114 +1,132 @@
-// ===============================
-// Book preview and favorite logic
-// ===============================
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("previewModal")
-  const closeModal = document.querySelector(".close-modal")
+    const previewIcons = document.querySelectorAll(".preview-icon");
+    const modal = document.getElementById("previewModal");
+    const closeModal = document.querySelector(".close-modal");
 
-  /* ===============================
-     PREVIEW & FAVORITES (DELEGATION)
-  =============================== */
-  document.addEventListener("click", (e) => {
-    const target = e.target
+    const modalImage = document.getElementById("modalBookImage");
+    const modalTitle = document.getElementById("modalBookTitle");
+    const modalAuthor = document.getElementById("modalBookAuthor");
+    const modalTags = document.getElementById("modalBookTags");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalFilepath = document.getElementById("modalfilepath");
 
-    /* ---------- PREVIEW ---------- */
-    if (target.classList.contains("preview-icon")) {
-      e.stopPropagation()
+    const btnDisplay = document.querySelector(".btn-display");
+    const btnDownload = document.querySelector(".btn-download");
 
-      const bookCard = target.closest(".book-card")
-      if (!bookCard) return
+    // Open modal and populate data
+    previewIcons.forEach(icon => {
+        icon.addEventListener("click", function () {
+            const card = this.closest(".book-card");
 
-      document.getElementById("modalBookImage").src =
-        bookCard.querySelector("img")?.src || ""
+            modalImage.src = card.querySelector("img").src;
+            modalTitle.innerText = card.querySelector(".Title").innerText;
+            modalTags.innerText = card.querySelector(".tags").innerText;
+            modalAuthor.innerText = card.querySelector(".author").innerText;
+            modalDescription.innerText = card.querySelector(".Desc").innerText;
+            modalFilepath.innerText = card.querySelector(".filepath").innerText;
 
-      document.getElementById("modalBookTitle").textContent =
-        bookCard.querySelector("p")?.textContent || ""
+            modal.style.display = "flex";
+        });
+    });
 
-      document.getElementById("modalBookTags").textContent =
-        bookCard.querySelector(".tags")?.textContent || ""
+    // Close modal
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
 
-      document.getElementById("modalBookAuthor").textContent =
-        bookCard.querySelector(".author")?.textContent || ""
-
-      modal.style.display = "flex"
-      modal.style.alignItems = "center"
-      modal.style.justifyContent = "center"
-      return
-    }
-
-    /* ---------- FAVORITE ---------- */
-    if (target.classList.contains("favorite-icon")) {
-      e.stopPropagation()
-
-      const bookId = target.dataset.bookId
-      const user = JSON.parse(localStorage.getItem("currentUser"))
-
-      if (!user) {
-        alert("Please login to add books to favorites!")
-        window.location.href = "login.html"
-        return
-      }
-
-      const userId = user.id || user.email || user.name
-      const allFavorites = JSON.parse(localStorage.getItem("favorites")) || {}
-      let userFavorites = allFavorites[userId] || []
-
-      target.classList.toggle("active")
-
-      if (target.classList.contains("active")) {
-        const bookCard = target.closest(".book-card")
-        if (!bookCard) return
-
-        const bookData = {
-          id: bookId,
-          image: bookCard.querySelector("img")?.src || "",
-          title: bookCard.querySelector("p")?.textContent || "",
-          tags: bookCard.querySelector(".tags")?.textContent || "",
-          author: bookCard.querySelector(".author")?.textContent || ""
+    // Display button: open file in new tab
+    btnDisplay.addEventListener("click", function () {
+        const filepath = modalFilepath.innerText;
+        if (filepath) {
+            window.open(filepath, "_blank");
+        } else {
+            alert("File not available for display.");
         }
+    });
 
-        if (!userFavorites.some((b) => b.id === bookId)) {
-          userFavorites.push(bookData)
+    // Download button: trigger download
+    btnDownload.addEventListener("click", function () {
+        const filepath = modalFilepath.innerText;
+        if (filepath) {
+            const link = document.createElement("a");
+            link.href = filepath;
+            link.download = filepath.split("/").pop(); // extract filename
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else {
+            alert("File not available for download.");
         }
-      } else {
-        userFavorites = userFavorites.filter((b) => b.id !== bookId)
-      }
+    });
 
-      allFavorites[userId] = userFavorites
-      localStorage.setItem("favorites", JSON.stringify(allFavorites))
+});
 
-      if (window.location.pathname.endsWith("favourite.html")) {
-        location.reload()
-      }
-    }
-  })
+document.addEventListener('DOMContentLoaded', () => {
+    const searchBar = document.getElementById('searchbar');
+    const searchButton = document.querySelector('.SearchContainer button'); // the search button
+    const bookCards = document.querySelectorAll('.book-card');
 
-  /* ===============================
-     MODAL CLOSE
-  =============================== */
-  closeModal?.addEventListener("click", () => {
-    modal.style.display = "none"
-  })
+    // Run search when button is clicked
+    searchButton.addEventListener('click', () => {
+        const query = searchBar.value.toLowerCase();
 
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none"
-  })
+        bookCards.forEach(card => {
+            const title = card.querySelector('.Title').textContent.toLowerCase();
+            const author = card.querySelector('.author').textContent.toLowerCase();
+            const tags = card.querySelector('.tags').textContent.toLowerCase();
 
-  /* ===============================
-     LOAD FAVORITE STATE (PER USER)
-  =============================== */
-  const user = JSON.parse(localStorage.getItem("currentUser"))
-  if (!user) return
+            if (title.includes(query) || author.includes(query) || tags.includes(query)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
 
-  const userId = user.id || user.email || user.name
-  const allFavorites = JSON.parse(localStorage.getItem("favorites")) || {}
-  const userFavorites = allFavorites[userId] || []
+document.addEventListener('DOMContentLoaded', () => {
+    const searchBar = document.getElementById('searchbar');
+    const bookCards = document.querySelectorAll('.book-card');
 
-  userFavorites.forEach((fav) => {
-    const icon = document.querySelector(
-      `.favorite-icon[data-book-id="${fav.id}"]`
-    )
-    if (icon) icon.classList.add("active")
-  })
-})
+    searchBar.addEventListener('input', () => {
+        const query = searchBar.value.toLowerCase();
+
+        bookCards.forEach(card => {
+            const title = card.querySelector('.Title').textContent.toLowerCase();
+            const author = card.querySelector('.author').textContent.toLowerCase();
+            const tags = card.querySelector('.tags').textContent.toLowerCase();
+
+            if (title.includes(query) || author.includes(query) || tags.includes(query)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const modal1 = document.getElementById("previewModal1");
+    const closeModal1 = document.querySelector(".close-modal1");
+    const favIcon = document.querySelectorAll("#FavIcon");
+    const selectedBook = document.querySelector(".selectedBookId");
+
+    favIcon.forEach(icon => {
+        icon.addEventListener("click", function () {
+
+            const card = this.closest(".book-card");
+            const bookID = card.querySelector(".BookId").innerText;
+
+            selectedBook.value = bookID;
+
+            modal1.style.display = "flex";
+        });
+    });
+
+    closeModal1.addEventListener("click", function () {
+        modal1.style.display = "none";
+    });
+
+});

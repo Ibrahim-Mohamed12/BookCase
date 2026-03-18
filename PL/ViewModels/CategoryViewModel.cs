@@ -9,6 +9,9 @@ namespace PL.ViewModels
         public string CategoryName { get; set; }
 
         public string Description { get; set; }
+
+        public ICollection<Book> books { get; set; } = new HashSet<Book>();
+
     }
 
     public static class CategoryExtensions
@@ -20,6 +23,7 @@ namespace PL.ViewModels
                 CategoryID = c.CategoryID,
                 CategoryName = c.CategoryName,
                 Description = c.Description,
+                books = c.books,
             };
         }
     }

@@ -14,20 +14,28 @@
                 <a id="Logo" asp-action="index" asp-controller="Home"><img src="~/Images/Logo.png"></a>
                 <section class="NavPages">
                     <a id="NavLink1" asp-action="index" asp-controller="Home">Home</a>
-                    <a id="NavLink2" asp-action="categories" asp-controller="Home">Categories</a>
+                    <a id="NavLink2" style="cursor: pointer;">Categories</a>
                     <a id="NavLink3" asp-action="favourite" asp-controller="Home">Favourite</a>
                     <a id="NavLink4" asp-action="about" asp-controller="Home">About Us</a>
                 </section>
-                <section class="Register">
-                    <a asp-action="login" asp-controller="Home" id="Login">Log in</a>
-                    <a asp-action="signup" asp-controller="Home" id="Signup">Signup</a>
-                </section>
+                @if (ViewBag.UserName == "user")
+                {
+                    <section class="Register">
+                        <a asp-action="login" asp-controller="Home" id="Login">Log in</a>
+                        <a asp-action="signup" asp-controller="Home" id="Signup">Signup</a>
+                    </section>
+                }
+
                 <!-- Add user profile section when logged in -->
-                <section class="UserProfile" style="display: none;">
-                    <span class="material-symbols-outlined" id="userIcon">account_circle</span>
-                    <span id="username"></span>
-                    <button id="logoutBtn">Logout</button>
-                </section>
+                @if (ViewBag.UserName != "user")
+                {
+                    <section class="UserProfile">
+                        <span class="material-symbols-outlined" id="userIcon">account_circle</span>
+                        <span id="username">@ViewBag.UserName</span>
+                        <a id="logoutBtn" asp-action="logOut" asp-controller="Home">Logout</a>
+                    </section>
+                }
+
                 <p id="DropButton"><span class="material-symbols-outlined">menu</span></p>
                 <section class="DropList">
                     <img src="~/Images/Logo.png">
@@ -41,45 +49,64 @@
                         <li class="options"><span class="material-symbols-outlined">category</span><a asp-action="categories" asp-controller="Home">Categories</a></li>
                         <li class="options"><span class="material-symbols-outlined">favorite</span><a asp-action="favourite" asp-controller="Home">Favorite</a></li>
                         <li class="options"><span class="material-symbols-outlined">info</span><a asp-action="about" asp-controller="Home">About Us</a></li>
-                        <li class="options"><span class="material-symbols-outlined">login</span><a asp-action="login" asp-controller="Home">Login</a></li>
-                        <li class="options"><span class="material-symbols-outlined">add</span><a asp-action="signup" asp-controller="Home">Signup</a></li>
+                        @if (ViewBag.UserName == "user")
+                        {
+                            <li class="options"><span class="material-symbols-outlined">login</span><a asp-action="login" asp-controller="Home">Login</a></li>
+                            <li class="options"><span class="material-symbols-outlined">add</span><a asp-action="signup" asp-controller="Home">Signup</a></li>
+                        }
+                        @if (ViewBag.UserName != "user")
+                        {
+                            <a id="logoutBtn" asp-action="logOut" asp-controller="Home">Logout</a>
+                        }
+
                     </ul>
                     <section class="DropCategoriesContainer" style="display: none; padding: 10px 20px; background: #000;">
+
                         <!-- Book Categories -->
                         <div class="CategoriesSection">
                             <h3>Books</h3>
                             <div class="Types">
-                                <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
-                                <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
-                                <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
-                                <a href="categories.html" data-category="Children" data-type="Books">Children</a>
-                                <a href="categories.html" data-category="History" data-type="Books">History</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="0EAC7220-7943-46CA-A571-DD224AD7596B">Science Fiction</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="1F482F63-1F01-4D33-89B3-F1BD4E44AE55">Fantasy</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="14C724FD-9CDA-42F4-8CCF-2D7432029DA1">Biography</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="131DC8F2-3F69-4702-A883-A46D5499817A">Economics</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="B8759E95-F4B3-4AD8-AB19-090823145BD5">Horror</a>
                             </div>
                         </div>
 
                         <!-- Research Categories -->
                         <div class="CategoriesSection">
-                            <h3>Researches</h3>
                             <div class="Types">
-                                <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
-                                <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
-                                <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
-                                <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
-                                <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="29629FA3-CCFD-46E8-8251-C3CFA34F54DE">Children</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="496C4B21-CC81-4255-8226-891E0630E4D2">Law</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="29327E3D-2B02-47D4-A931-39B000962DD5">Romance</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="26DCE244-18E7-4521-AD4A-F40402958FED">Self-Help</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="6CBDBF41-A139-4144-AB4D-952FA713BAD2">Politics</a>
                             </div>
                         </div>
 
                         <!-- Article Categories -->
                         <div class="CategoriesSection">
-                            <h3>Articles</h3>
                             <div class="Types">
-                                <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
-                                <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
-                                <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
-                                <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
-                                <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="8BF04F1A-AA47-4740-80B9-81D2526B273A">Comics & Graphic Novels</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="85720581-7D73-4EF8-AE52-621A96B6AA30">Technology</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="7A365201-511A-4005-A45F-1CE3A40CCEF3">Sports</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="736990FC-BF11-4BC7-8BD1-8D34885173ED">Health & Fitness</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="6DADAB1A-C0A7-4B25-97F8-319FBE7E2BBC">Hobbies & Crafts</a>
                             </div>
                         </div>
+
+                        <!-- Article Categories -->
+                        <div class="CategoriesSection">
+                            <div class="Types">
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="E278B9AF-7E71-4073-AA72-8D2E5CA1881B">Cooking</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="A2312DD3-67C0-4E42-83E8-151391B47CFA">Poetry</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="A758299F-420D-4EBF-BCBA-5243DC7535FB">Philosophy</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="B0E19EFE-3E6B-48E4-9A2B-7533738FEEC2">Travel</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="D31B8866-053D-486F-A622-D41A163A8E8F">Art & Design</a>
+                            </div>
+                        </div>
+
                     </section>
                 </section>
             </div>
@@ -87,37 +114,45 @@
                 <!-- Book Categories -->
                 <div class="CategoriesSection">
                     <h3>Books</h3>
-                    <p></p>
                     <div class="Types">
-                        <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
-                        <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
-                        <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
-                        <a href="categories.html" data-category="Children" data-type="Books">Children</a>
-                        <a href="categories.html" data-category="History" data-type="Books">History</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="0EAC7220-7943-46CA-A571-DD224AD7596B">Science Fiction</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="1F482F63-1F01-4D33-89B3-F1BD4E44AE55">Fantasy</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="14C724FD-9CDA-42F4-8CCF-2D7432029DA1">Biography</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="131DC8F2-3F69-4702-A883-A46D5499817A">Economics</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="B8759E95-F4B3-4AD8-AB19-090823145BD5">Horror</a>
                     </div>
                 </div>
 
                 <!-- Research Categories -->
                 <div class="CategoriesSection">
-                    <p></p>
                     <div class="Types">
-                        <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
-                        <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
-                        <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
-                        <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
-                        <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="29629FA3-CCFD-46E8-8251-C3CFA34F54DE">Children</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="496C4B21-CC81-4255-8226-891E0630E4D2">Law</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="29327E3D-2B02-47D4-A931-39B000962DD5">Romance</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="26DCE244-18E7-4521-AD4A-F40402958FED">Self-Help</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="6CBDBF41-A139-4144-AB4D-952FA713BAD2">Politics</a>
                     </div>
                 </div>
 
                 <!-- Article Categories -->
                 <div class="CategoriesSection">
-                    <p></p>
                     <div class="Types">
-                        <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
-                        <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
-                        <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
-                        <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
-                        <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="8BF04F1A-AA47-4740-80B9-81D2526B273A">Comics & Graphic Novels</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="85720581-7D73-4EF8-AE52-621A96B6AA30">Technology</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="7A365201-511A-4005-A45F-1CE3A40CCEF3">Sports</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="736990FC-BF11-4BC7-8BD1-8D34885173ED">Health & Fitness</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="6DADAB1A-C0A7-4B25-97F8-319FBE7E2BBC">Hobbies & Crafts</a>
+                    </div>
+                </div>
+
+                <!-- Article Categories -->
+                <div class="CategoriesSection">
+                    <div class="Types">
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="E278B9AF-7E71-4073-AA72-8D2E5CA1881B">Cooking</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="A2312DD3-67C0-4E42-83E8-151391B47CFA">Poetry</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="A758299F-420D-4EBF-BCBA-5243DC7535FB">Philosophy</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="B0E19EFE-3E6B-48E4-9A2B-7533738FEEC2">Travel</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="D31B8866-053D-486F-A622-D41A163A8E8F">Art & Design</a>
                     </div>
                 </div>
             </div>
@@ -187,9 +222,6 @@
             <div class="teamSection">
                 <h3>Join Our Community</h3>
                 <p>Become part of a global community of readers and learners. Share your thoughts, discover new perspectives, and let books transform your world.</p>
-                <div class="ctaButtons">
-                    <a asp-action="signup" asp-controller="Home" class="primaryButton">Get Started</a>
-                </div>
             </div>
         </div>
     </div>

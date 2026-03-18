@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard - BookCase";
+    Layout = "_Layout";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/homePage.css">
+    <link rel="stylesheet">
+</head>
+
+<div class="admin-container">
+
+    <!-- Mobile Topbar -->
+    <div class="top-navbar">
+        <div class="logo">
+            <img src="~/Images/Logo.png" class="logo-img">
+            <span>Admin Dashboard</span>
+        </div>
+        <span id="menuBtn" class="menu-btn" onclick="toggleSidebar()">☰</span>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-overlay" id="sidebarOverlay">
+        <div class="sidebar-logo">
+            <img src="~/Images/Logo.png">
+        </div>
+
+        <nav class="sidebar-nav">
+            <a asp-action="Admin" asp-controller="Admin">
+                <span class="material-symbols-outlined">dashboard</span> Overview
+            </a>
+
+            <a class="active">
+                <span class="material-symbols-outlined">group</span> Manage Users
+            </a>
+
+            <a asp-action="manageBooks" asp-controller="Admin">
+                <span class="material-symbols-outlined">library_books</span> Manage Books
+            </a>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <h1>Admin Dashboard</h1>
+        </header>
+
+        <section class="admin-section" id="users">
+            <div class="section-header">
+                <h2 style="color: white;">Registered Users</h2>
+            </div>
+            <div class="table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var c = 1;
+                        }
+
+                        @foreach (var user in ViewBag.Users)
+                        {
+                            if (!user.isAdmin)
+                            {
+                                <tr>
+                                    <td>#@c</td>
+                                    <td>@user.Name</td>
+                                    <td>@user.Email</td>
+                                    <td>User</td>
+                                    <td>
+                                        <a asp-action="DeleteUser" asp-controller="Admin" asp-route-id=@user.UserID class="action-btn delete"><span class="material-symbols-outlined">delete</span></a>
+                                    </td>
+                                </tr>
+                                c++;
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="~/js/Admin.js"></script>

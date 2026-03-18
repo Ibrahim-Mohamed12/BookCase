@@ -12,5 +12,7 @@ namespace BLL.Interfaces
         public IEnumerable<Book> GetBooksByCategoryID(string categoryId);
 
         public int CountBooks();
+        public IEnumerable<Book> GetTop10();
+
     }
 }

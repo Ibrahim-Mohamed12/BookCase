@@ -22,6 +22,8 @@ namespace PL.ViewModels
         [MaxLength(200)]
         public string ImageURL { get; set; }
 
+        public IFormFile BookFile { get; set; }
+
         // Relations
         public string CategoryID { get; set; } // Foreign key
 

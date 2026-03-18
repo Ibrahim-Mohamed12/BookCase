@@ -14,5 +14,9 @@ namespace BLL.Interfaces
         public User GetByEmail(string email);
 
         public int GetNOfUsers();
+
+        public IEnumerable<User> GetTop10();
+
+        public List<string> GetAllEmails();
     }
 }

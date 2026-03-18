@@ -26,6 +26,9 @@ namespace BookCaseEF.Data.Configurations
             builder.Property(b => b.ImageURL)
                 .IsRequired()
                 .HasMaxLength(200);
+            builder.Property(b => b.Filepath)
+                .IsRequired()
+                .HasMaxLength(200);
             // Relations
             builder.HasOne(b => b.Category)
                 .WithMany(c => c.books)

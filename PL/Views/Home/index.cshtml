@@ -15,7 +15,7 @@ Layout = "_Layout";
                 <a id="Logo" asp-action="index" asp-controller="Home"><img src="~/Images/Logo.png"></a>
                 <section class="NavPages">
                     <a id="NavLink1" asp-action="index" asp-controller="Home">Home</a>
-                    <a id="NavLink2" asp-action="categories" asp-controller="Home" >Categories</a>
+                    <a id="NavLink2" style="cursor: pointer;">Categories</a>
                     <a id="NavLink3" asp-action="favourite" asp-controller="Home" >Favourite</a>
                     <a id="NavLink4" asp-action="about" asp-controller="Home" >About Us</a>
                 </section>
@@ -62,41 +62,52 @@ Layout = "_Layout";
 
                     </ul>
                     <section class="DropCategoriesContainer" style="display: none; padding: 10px 20px; background: #000;">
+
                         <!-- Book Categories -->
                         <div class="CategoriesSection">
                             <h3>Books</h3>
                             <div class="Types">
-                                <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
-                                <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
-                                <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
-                                <a href="categories.html" data-category="Children" data-type="Books">Children</a>
-                                <a href="categories.html" data-category="History" data-type="Books">History</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="0EAC7220-7943-46CA-A571-DD224AD7596B">Science Fiction</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="1F482F63-1F01-4D33-89B3-F1BD4E44AE55">Fantasy</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="14C724FD-9CDA-42F4-8CCF-2D7432029DA1">Biography</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="131DC8F2-3F69-4702-A883-A46D5499817A">Economics</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="B8759E95-F4B3-4AD8-AB19-090823145BD5">Horror</a>
                             </div>
                         </div>
 
                         <!-- Research Categories -->
                         <div class="CategoriesSection">
-                            <h3>Researches</h3>
                             <div class="Types">
-                                <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
-                                <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
-                                <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
-                                <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
-                                <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="29629FA3-CCFD-46E8-8251-C3CFA34F54DE">Children</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="496C4B21-CC81-4255-8226-891E0630E4D2">Law</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="29327E3D-2B02-47D4-A931-39B000962DD5">Romance</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="26DCE244-18E7-4521-AD4A-F40402958FED">Self-Help</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="6CBDBF41-A139-4144-AB4D-952FA713BAD2">Politics</a>
                             </div>
                         </div>
 
                         <!-- Article Categories -->
                         <div class="CategoriesSection">
-                            <h3>Articles</h3>
                             <div class="Types">
-                                <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
-                                <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
-                                <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
-                                <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
-                                <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="8BF04F1A-AA47-4740-80B9-81D2526B273A">Comics & Graphic Novels</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="85720581-7D73-4EF8-AE52-621A96B6AA30">Technology</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="7A365201-511A-4005-A45F-1CE3A40CCEF3">Sports</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="736990FC-BF11-4BC7-8BD1-8D34885173ED">Health & Fitness</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="6DADAB1A-C0A7-4B25-97F8-319FBE7E2BBC">Hobbies & Crafts</a>
                             </div>
                         </div>
+
+                        <!-- Article Categories -->
+                        <div class="CategoriesSection">
+                            <div class="Types">
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="E278B9AF-7E71-4073-AA72-8D2E5CA1881B">Cooking</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="A2312DD3-67C0-4E42-83E8-151391B47CFA">Poetry</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="A758299F-420D-4EBF-BCBA-5243DC7535FB">Philosophy</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="B0E19EFE-3E6B-48E4-9A2B-7533738FEEC2">Travel</a>
+                                <a asp-action="categories" asp-controller="Home" asp-route-id="D31B8866-053D-486F-A622-D41A163A8E8F">Art & Design</a>
+                            </div>
+                        </div>
+
                     </section>
                 </section>
             </div>
@@ -104,41 +115,50 @@ Layout = "_Layout";
                 <!-- Book Categories -->
                 <div class="CategoriesSection">
                     <h3>Books</h3>
-                    <p></p>
                     <div class="Types">
-                        <a href="categories.html" data-category="Science Fiction" data-type="Books">Science Fiction</a>
-                        <a href="categories.html" data-category="Fantasy" data-type="Books">Fantasy</a>
-                        <a href="categories.html" data-category="Horror" data-type="Books">Horror</a>
-                        <a href="categories.html" data-category="Children" data-type="Books">Children</a>
-                        <a href="categories.html" data-category="History" data-type="Books">History</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="0EAC7220-7943-46CA-A571-DD224AD7596B">Science Fiction</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="1F482F63-1F01-4D33-89B3-F1BD4E44AE55">Fantasy</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="14C724FD-9CDA-42F4-8CCF-2D7432029DA1">Biography</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="131DC8F2-3F69-4702-A883-A46D5499817A">Economics</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="B8759E95-F4B3-4AD8-AB19-090823145BD5">Horror</a>
                     </div>
                 </div>
 
                 <!-- Research Categories -->
                 <div class="CategoriesSection">
-                    <p></p>
                     <div class="Types">
-                        <a href="categories.html" data-category="Artificial Intelligence" data-type="Researches">Artificial Intelligence</a>
-                        <a href="categories.html" data-category="Quantum Physics" data-type="Researches">Quantum Physics</a>
-                        <a href="categories.html" data-category="Medical Studies" data-type="Researches">Medical Studies</a>
-                        <a href="categories.html" data-category="Environmental Science" data-type="Researches">Environmental Science</a>
-                        <a href="categories.html" data-category="Social Science" data-type="Researches">Social Science</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="29629FA3-CCFD-46E8-8251-C3CFA34F54DE">Children</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="496C4B21-CC81-4255-8226-891E0630E4D2">Law</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="29327E3D-2B02-47D4-A931-39B000962DD5">Romance</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="26DCE244-18E7-4521-AD4A-F40402958FED">Self-Help</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="6CBDBF41-A139-4144-AB4D-952FA713BAD2">Politics</a>
                     </div>
                 </div>
 
                 <!-- Article Categories -->
                 <div class="CategoriesSection">
-                    <p></p>
                     <div class="Types">
-                        <a href="categories.html" data-category="Technology" data-type="Articles">Technology</a>
-                        <a href="categories.html" data-category="Education" data-type="Articles">Education</a>
-                        <a href="categories.html" data-category="Health & Wellness" data-type="Articles">Health & Wellness</a>
-                        <a href="categories.html" data-category="Politics" data-type="Articles">Politics</a>
-                        <a href="categories.html" data-category="Culture" data-type="Articles">Culture</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="8BF04F1A-AA47-4740-80B9-81D2526B273A">Comics & Graphic Novels</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="85720581-7D73-4EF8-AE52-621A96B6AA30">Technology</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="7A365201-511A-4005-A45F-1CE3A40CCEF3">Sports</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="736990FC-BF11-4BC7-8BD1-8D34885173ED">Health & Fitness</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="6DADAB1A-C0A7-4B25-97F8-319FBE7E2BBC">Hobbies & Crafts</a>
+                    </div>
+                </div>
+
+                <!-- Article Categories -->
+                <div class="CategoriesSection">
+                    <div class="Types">
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="E278B9AF-7E71-4073-AA72-8D2E5CA1881B">Cooking</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="A2312DD3-67C0-4E42-83E8-151391B47CFA">Poetry</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="A758299F-420D-4EBF-BCBA-5243DC7535FB">Philosophy</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="B0E19EFE-3E6B-48E4-9A2B-7533738FEEC2">Travel</a>
+                        <a asp-action="categories" asp-controller="Home" asp-route-id="D31B8866-053D-486F-A622-D41A163A8E8F">Art & Design</a>
                     </div>
                 </div>
             </div>
         </div>
+
         <div id="ImageText">
             <div id="Logo-Text">
                 <img src="~/Images/Logo.png">
@@ -166,292 +186,40 @@ Layout = "_Layout";
             </div>
         </div>
     </div>
-    <div class="BestContainer">
-        <div id="Title">Most Popular</div>
-        <h3 class="quote">"A room without books is like a body without a soul." — Cicero</h3>
-        <div class="book-collections">
-
-            <div class="book-page active" id="page-1">
-                <!-- Page 1 books -->
-                <div class="book-card">
-                    <!-- Add preview and favorite icons overlay -->
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="1">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="1">favorite_border</span>
-                    </div>
-                    <img src="~/Images/Miniature Book Cover Template.jpg" alt="Book 1">
-                    <p>The uses of Libraries. please read me</p>
-                    <p class="tags" id="Tags">Medical Studies</p>
-                    <p class="author">Ahmed Mohamed</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="2">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="2">favorite_border</span>
-                    </div>
-                    <img src="~/Images/Miniature Book Cover Template.jpg" alt="Book 1">
-                    <p>The uses of Libraries. please read me</p>
-                    <p class="tags" id="Tags">Social Science</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="3">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="3">favorite_border</span>
-                    </div>
-                    <img src="~/Images/Novel Book Cover Template.jpg" alt="Book 1">
-                    <p>The uses of Libraries. please read me</p>
-                    <p class="tags" id="Tags">Environmental Science</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="4">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="4">favorite_border</span>
-                    </div>
-                    <img src="~/Images/Children_27s Book Cover Template.jpg" alt="Book 1">
-                    <p>The uses of Libraries. please read me</p>
-                    <p class="tags" id="Tags">Social Science</p>
-                    <p class="author">Author Name</p>
-                </div>
-            </div>
-
-            <div class="book-page" id="page-2">
-                <!-- Page 2 books -->
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="5">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="5">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Artificial Intelligence</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="6">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="6">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Children_27s Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Children</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="7">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="7">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Thriller Novel Kindle Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Horror</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="8">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="8">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Novel Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Fantasy</p>
-                    <p class="author">Author Name</p>
-                </div>
-            </div>
-
-            <div class="book-page" id="page-3">
-                <!-- Page 3 books -->
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="9">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="9">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Miniature Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Culture</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="10">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="10">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Magazine Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Politics</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="11">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="11">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Health & Wellness</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="12">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="12">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Children_27s Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Education</p>
-                    <p class="author">Author Name</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="pagination">
-            <button class="active" onclick="showPage(1)">1</button>
-            <button onclick="showPage(2)">2</button>
-            <button onclick="showPage(3)">3</button>
-        </div>
-    </div>
     <div class="Recommendations">
         <div id="Title">Recommendations</div>
         <h3 class="quote">"Reading gives us someplace to go when we have to stay where we are." — Mason Cooley</h3>
         <div class="book-collections">
 
             <div class="book-page1 active" id="page-4">
-                <!-- Page 1 books -->
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="13">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="13">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Novel Book Cover Template.jpg" alt="Book 1">
-                    <p>The uses of Libraries. please read me</p>
-                    <p class="tags" id="Tags">Technology</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="14">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="14">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Children_27s Book Cover Template.jpg" alt="Book 1">
-                    <p>The uses of Libraries. please read me</p>
-                    <p class="tags" id="Tags">Social Science</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="15">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="15">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Book 1">
-                    <p>The uses of Libraries. please read me</p>
-                    <p class="tags" id="Tags">Environmental Science</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="16">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="16">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Magazine Book Cover Template.jpg" alt="Book 1">
-                    <p>The uses of Libraries. please read me</p>
-                    <p class="tags" id="Tags">Medical Studies</p>
-                    <p class="author">Author Name</p>
-                </div>
-            </div>
 
-            <div class="book-page1" id="page-5">
-                <!-- Page 2 books -->
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="17">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="17">favorite_border</span>
+                @{
+                    var counter = 0;
+                }
+                
+                @foreach(var book in ViewBag.Books)
+                {
+                    if(counter == 8)
+                    {
+                        break;
+                    }
+                    <!-- Page 1 books -->
+                    <div class="book-card">
+                        <!-- Add preview and favorite icons overlay -->
+                        <div class="book-actions">
+                            <span class="material-symbols-outlined preview-icon">visibility</span>
+                        </div>
+                        <img src="@book.ImageURL" alt="The Uses of Libraries Book Cover">
+                        <p hidden class="Desc">@book.Description</p>
+                        <p hidden class="filepath">@book.Filepath</p>
+                        <p hidden class="BookId">@book.BookID</p>
+                        <p class="Title">@book.Title</p>
+                        <p class="tags" id="Tags">@book.Category.CategoryName</p>
+                        <p class="author">@book.Author</p>
                     </div>
-                    <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">History</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="18">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="18">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Thriller Novel Kindle Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Children</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="19">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="19">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Miniature Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Quantum Physics</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="20">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="20">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Magazine Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Artificial Intelligence</p>
-                    <p class="author">Author Name</p>
-                </div>
+                    counter++;
+                }
             </div>
-
-            <div class="book-page1" id="page-6">
-                <!-- Page 3 books -->
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="21">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="21">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Free Children_s Story Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Fantasy</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="22">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="22">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Miniature Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Science Fiction</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="23">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="23">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Novel Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Horror</p>
-                    <p class="author">Author Name</p>
-                </div>
-                <div class="book-card">
-                    <div class="book-actions">
-                        <span class="material-symbols-outlined preview-icon" data-book-id="24">visibility</span>
-                        <span class="material-symbols-outlined favorite-icon" data-book-id="24">favorite_border</span>
-                    </div>
-                    <img src="assets/IMG/Children_27s Book Cover Template.jpg" alt="Book 1">
-                    <p>Book Title</p>
-                    <p class="tags" id="Tags">Fantasy</p>
-                    <p class="author">Author Name</p>
-                </div>
-            </div>
-        </div>
-        <div class="pagination1">
-            <button class="active" onclick="showRecommendation(4)">1</button>
-            <button onclick="showRecommendation(5)">2</button>
-            <button onclick="showRecommendation(6)">3</button>
         </div>
     </div>
 
@@ -462,10 +230,13 @@ Layout = "_Layout";
             <div class="modal-body">
                 <img id="modalBookImage" src="/placeholder.svg" alt="Book Cover">
                 <div class="modal-details">
-                    <h2 id="modalBookTitle"></h2>
-                    <p class="modal-author" id="modalBookAuthor"></p>
-                    <p class="modal-tags" id="modalBookTags"></p>
-                    <p class="modal-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div>
+                        <h2 id="modalBookTitle"></h2>
+                        <p class="modal-author" id="modalBookAuthor"></p>
+                        <p class="modal-tags" id="modalBookTags"></p>
+                        <p hidden id="modalfilepath"></p>
+                        <p class="modal-description" id="modalDescription"></p>
+                    </div>
                     <div class="modal-buttons">
                         <button class="btn-display">Display</button>
                         <button class="btn-download">Download</button>
@@ -508,4 +279,5 @@ Layout = "_Layout";
 </footer>
 
 <script src="~/js/homePage.js"></script>
+<script src="~/js/common.js"></script>
 <script src="~/js/book-features.js"></script>

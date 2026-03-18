@@ -25,7 +25,7 @@ a:visited {
 .mainSection {
     width: 100%;
     height: 100vh;
-    background-image: url(../IMG/book-5472X3648-wallpaper-4ibfq0znewa7wgxb.jpeg);
+    background-image: url(../Images/book-5472X3648-wallpaper-4ibfq0znewa7wgxb.jpeg);
     background-position: center;
     background-size: cover;
 }
@@ -355,6 +355,10 @@ a:visited {
         position: relative;
         top: -20px;
     }
+}
+
+.modal {
+    display: none;
 }
 
 #ImageText #Logo-Text p {
@@ -897,6 +901,181 @@ html {
         transform: translateY(-2px);
     }
 
+/* Add modal styles */
+.modal {
+    display: none;
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #1e1e1e;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 800px;
+    height: fit-content;
+    position: relative;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    color: #ffffff;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s;
+}
+
+    .close-modal:hover {
+        color: rgb(244, 174, 174);
+    }
+
+.modal-body {
+    display: flex;
+    padding: 40px;
+    gap: 30px;
+}
+
+    .modal-body img {
+        width: 250px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+.modal-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-around;
+}
+
+    .modal-details h2 {
+        color: #ffffff;
+        font-size: 28px;
+        margin: 0;
+        font-family: "Quicksand", sans-serif;
+    }
+
+.modal-author {
+    color: #b7b7b7;
+    font-size: 18px;
+    margin: 0;
+}
+
+.modal-tags {
+    color: #888;
+    font-size: 16px;
+    margin: 0;
+}
+
+.modal-price {
+    color: rgb(244, 174, 174);
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.modal-description {
+    color: #cccccc;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+    .modal-buttons button {
+        flex: 1;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: "Quicksand", sans-serif;
+        transition: all 0.3s ease;
+    }
+
+.btn-display {
+    background-color: #000000;
+    color: rgb(244, 174, 174);
+    border: 1px solid rgb(244, 174, 174);
+}
+
+    .btn-display:hover {
+        background-color: #1d1d1d;
+        transform: translateY(-2px);
+    }
+
+.btn-add {
+    background-color: rgb(244, 174, 174);
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Quicksand", sans-serif;
+    cursor: pointer;
+}
+
+.btn-download {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    background-color: rgb(244, 174, 174);
+    border: none;
+}
+
+.btn-add span {
+    position: relative;
+    top: 1px;
+}
+
+.btn-add:hover, .btn-download:hover {
+    background-color: rgb(215, 143, 143);
+    transform: translateY(-2px);
+}
+
 /* Responsive modal */
 @media (max-width: 768px) {
     .modal-body {
@@ -914,6 +1093,7 @@ html {
         margin: 10% auto;
     }
 }
+
 
 /* Footer Container */
 .Footer {
@@ -1931,14 +2111,33 @@ address {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-    .authButton:hover {
-        background-color: rgb(255, 190, 190);
-        transform: translateY(-2px);
-    }
+.authButton1 {
+    width: 100%;
+    height: 50px;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
 
-    .authButton:active {
-        transform: translateY(0);
-    }
+.authButton:hover {
+    background-color: rgb(255, 190, 190);
+    transform: translateY(-2px);
+}
+
+.authButton1:hover {
+    background-color: #ff5057;
+    transform: translateY(-2px);
+}
+
+.authButton:active, .authButton1:active {
+    transform: translateY(0);
+}
 
 .switchAuth {
     text-align: center;

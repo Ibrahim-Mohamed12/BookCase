@@ -69,5 +69,14 @@ namespace BLL.Repository
             return books.Count;
         }
 
+        public IEnumerable<Book> GetTop10()
+        {
+            List<Book> books = _context.Book
+                .AsNoTracking()
+                .Take(10)
+                .ToList();
+
+            return books;
+        }
     }
 }

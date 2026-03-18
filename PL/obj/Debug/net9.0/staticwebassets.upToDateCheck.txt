@@ -5,14 +5,12 @@ D:\Visual Studio Projects\PL\wwwroot\lib\jquery\dist\jquery.slim.min.js
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
 D:\Visual Studio Projects\PL\wwwroot\lib\jquery\LICENSE.txt
 D:\Visual Studio Projects\PL\wwwroot\js\about.js
-D:\Visual Studio Projects\PL\wwwroot\js\favourite.js
 D:\Visual Studio Projects\PL\wwwroot\css\homePage.css
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
 D:\Visual Studio Projects\PL\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
-D:\Visual Studio Projects\PL\wwwroot\js\database.js
 D:\Visual Studio Projects\PL\wwwroot\js\common.js
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
 D:\Visual Studio Projects\PL\wwwroot\lib\jquery\dist\jquery.slim.js
@@ -35,7 +33,6 @@ D:\Visual Studio Projects\PL\wwwroot\lib\jquery-validation-unobtrusive\dist\jque
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
-D:\Visual Studio Projects\PL\wwwroot\js\categories.js
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
 D:\Visual Studio Projects\PL\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
@@ -80,6 +77,7 @@ wwwroot\Images\Black_Logo.png
 wwwroot\Images\book-5472X3648-wallpaper-4ibfq0znewa7wgxb.jpeg
 wwwroot\Images\Children_27s Book Cover Template.jpg
 wwwroot\Images\Free Children_s Story Book Cover Template.jpg
+wwwroot\Images\images.png
 wwwroot\Images\IT.jpg
 wwwroot\Images\Logo.png
 wwwroot\Images\Magazine Book Cover Template.jpg
@@ -89,10 +87,7 @@ wwwroot\Images\Thriller Novel Kindle Book Cover Template.jpg
 wwwroot\js\about.js
 wwwroot\js\Admin.js
 wwwroot\js\book-features.js
-wwwroot\js\categories.js
 wwwroot\js\common.js
-wwwroot\js\database.js
-wwwroot\js\favourite.js
 wwwroot\js\homePage.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
@@ -154,3 +149,13 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\uploads\Assignment 1_92c54cc4-f649-4cb7-98d0-3eac00567d9b.pdf
+wwwroot\uploads\Assignment 1_970027ba-8417-4ed1-8db0-78bfc0a3278c.pdf
+wwwroot\uploads\Assignment 1_aa9e84cb-f5c5-4c28-86e5-14cb01c4c174.pdf
+wwwroot\uploads\Assignment 1_b66e37e0-3c2f-46ba-98eb-828a333c464e.pdf
+wwwroot\uploads\Assignment 1_d0775c87-1bd1-4907-831f-2ec4b9379a33.pdf
+wwwroot\uploads\IS341-20230003-Assignment1_b15988bc-69c9-424e-a748-935de34dacc7.pdf
+wwwroot\uploads\IS341-SIS334-Assignment 1_12da14d5-ec1a-4c6a-b048-a047742099c2.pdf
+wwwroot\uploads\IS341-SIS334-Assignment 1_39d65baa-a201-4999-8840-a9c1ab083f1c.pdf
+wwwroot\uploads\Resume_af1cfc62-6e0b-4a66-8b3d-5f3b36777a77.pdf
+wwwroot\uploads\Resume_b5a71d4f-3b67-4af6-be08-711542d94e33.pdf

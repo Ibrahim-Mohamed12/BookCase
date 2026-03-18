@@ -60,10 +60,62 @@ namespace BLL.Repository
             return count;
         }
 
+        public List<FavList> GetAllFavListToSpecificUser(string id)
+        {
+            List<FavList> favLists = _context.FavList
+              .AsNoTracking()
+              .Where(f => f.UserID == id)
+              .ToList();
+
+            return favLists;
+        }
+
+
         public FavList GetById(string id)
         {
-            throw new NotImplementedException();
+            var favlist = _context.FavList
+                          .AsNoTracking()
+                          .Where(f => f.FavID == id)
+                          .Include(f => f.books)
+                          .ThenInclude(b => b.Category)
+                          .FirstOrDefault();
+
+            return favlist;
         }
+
+        public int AddBookToFavList(string bookId, string favListId)
+        {
+            var favList = _context.FavList
+                .Include(f => f.books)
+                .FirstOrDefault(f => f.FavID == favListId);
+
+            var book = _context.Book
+                .FirstOrDefault(b => b.BookID == bookId);
+
+            // prevent duplicate
+            if (!favList.books.Any(b => b.BookID == bookId))
+            {
+                favList.books.Add(book);
+            }
+
+            return _context.SaveChanges();
+        }
+
+        public int DeleteBookFromFavList(string bookId, string favListId)
+        {
+            var favList = _context.FavList
+                .Include(f => f.books)
+                .FirstOrDefault(f => f.FavID == favListId);
+
+            var book = favList.books
+                .FirstOrDefault(b => b.BookID == bookId);
+
+            favList.books.Remove(book);
+
+            return _context.SaveChanges();
+        }
+
+
 
         public int Update(FavList entity)
         {

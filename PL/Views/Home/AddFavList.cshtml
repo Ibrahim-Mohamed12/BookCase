@@ -1,0 +1,36 @@
+﻿@model AddFavListViewModel;
+
+@* @{
+    ViewData["Title"] = "Admin Dashboard - BookCase";
+} *@
+
+<head>
+    <link rel="stylesheet" href="~/css/homePage.css">
+    <link rel="stylesheet">
+</head>
+
+<div class="admin-container">
+
+    <div class="authContainer">
+        <div class="authBox">
+            <h1>Add new Book</h1>
+
+            <form id="signupForm" asp-action="AddFavList" asp-controller="Home" method="post">
+
+                <div asp-validation-summary="All" style="color: red; background-color: white;"></div>
+
+                <input type="hidden" asp-for="UserID" value="@ViewBag.UserId" />
+                <div class="inputGroup">
+                    <label for="name">Favorite List Name</label>
+                    <input asp-for="FavName" type="text" id="name" placeholder="Enter Book Title">
+                </div>
+
+                <button type="submit" class="authButton">Add Book</button>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/js/Admin.js"></script>

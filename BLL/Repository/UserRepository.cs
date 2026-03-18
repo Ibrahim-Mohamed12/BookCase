@@ -76,10 +76,27 @@ namespace BLL.Repository
         {
             List<User> users = _context.User
                .AsNoTracking()
+               .Where(u => u.isAdmin == false)
                .ToList();
             return users.Count;
         }
 
+        public IEnumerable<User> GetTop10()
+        {
+            List<User> users = _context.User
+                .AsNoTracking()
+                .Take(10)
+                .ToList();
 
+            return users;
+        }
+
+        public List<string> GetAllEmails()
+        {
+            return _context.User
+                .AsNoTracking()
+                .Select(u => u.Email)
+                .ToList();
+        }
     }
 }
