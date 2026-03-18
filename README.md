@@ -9,7 +9,8 @@ The project is built using **ASP.NET Core MVC** following a **3-Tier Architectur
 ---
 ##Team Members:
 
-1)Ibrahim Mohamed Saad ()
+1)Ibrahim Mohamed Saad (hes93314@gmail.com)
+
 2)Ezzeldin Omar (ezzeldinomar7@gmail.com)
 ---
 
